@@ -7,6 +7,7 @@ import logic.Interfaces.Classy;
 public class Warrior implements Classy {
 
     private String className = "Guerreiro";
+    private int classHP = 10;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -43,6 +44,11 @@ public class Warrior implements Classy {
     }
 
     @Override
+    public int getClassHP() {
+        return classHP;
+    }
+
+    @Override
     public int getClassStr() {
         return classStr;
     }
@@ -75,43 +81,52 @@ public class Warrior implements Classy {
     public Warrior(int level){
         switch (level) {
             case 20:
+                classHP = classHP + 6;
                 this.classStr = this.classStr + 2;
             case 19:
-
+                classHP = classHP + 6;
             case 18:
+                classHP = classHP + 6;
                 this.classCon = this.classCon + 1;
             case 17:
-
+                classHP = classHP + 6;
             case 16:
+                classHP = classHP + 6;
                 this.classStr = this.classStr + 2;
             case 15:
-
+                classHP = classHP + 6;
             case 14:
+                classHP = classHP + 6;
                 this.classDex = this.classDex + 1;
             case 13:
-
+                classHP = classHP + 6;
             case 12:
+                classHP = classHP + 6;
                 this.classStr = this.classStr + 2;
             case 11:
-
+                classHP = classHP + 6;
             case 10:
+                classHP = classHP + 6;
                 this.classCon = this.classCon + 1;
             case 9:
-
+                classHP = classHP + 6;
             case 8:
+                classHP = classHP + 6;
                 this.classStr = this.classStr + 2;
             case 7:
-
+                classHP = classHP + 6;
             case 6:
+                classHP = classHP + 6;
                 this.classCon = this.classCon+ 1;
             case 5:
-
+                classHP = classHP + 6;
             case 4:
+                classHP = classHP + 6;
                 this.classStr = this.classStr + 2;
             case 3:
-
+                classHP = classHP + 6;
             case 2:
-                
+                classHP = classHP + 6;  
             case 1:
 
         }
