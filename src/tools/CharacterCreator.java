@@ -221,6 +221,7 @@ public class CharacterCreator {
             attributeArray[4] = tempWis;
             attributeArray[5] = tempCha;
         }
+        
         return attributeArray;
     }
     

@@ -7,6 +7,7 @@ import logic.Interfaces.Classy;
 public class Thief implements Classy {
 
     private String className = "Ladino";
+    private int classHP = 8;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -43,6 +44,11 @@ public class Thief implements Classy {
     }
 
     @Override
+    public int getClassHP() {
+        return classHP;
+    }
+
+    @Override
     public int getClassStr() {
         return classStr;
     }
@@ -75,45 +81,50 @@ public class Thief implements Classy {
     public Thief(int level){
         switch (level) {
             case 20:
+                classHP = classHP + 5;
                 this.classDex = this.classDex + 1;
                 this.classInt = this.classInt + 1;
             case 19:
-
+                classHP = classHP + 5;
             case 18:
-                
+                classHP = classHP + 5;
             case 17:
-
+                classHP = classHP + 5;
             case 16:
+                classHP = classHP + 5;
                 this.classDex = this.classDex + 1;
                 this.classInt = this.classInt + 1;
             case 15:
-
+                classHP = classHP + 5;
             case 14:
-                
+                classHP = classHP + 5;
             case 13:
-
+                classHP = classHP + 5;
             case 12:
+                classHP = classHP + 5;
                 this.classDex = this.classDex + 2;
             case 11:
-
+                classHP = classHP + 5;
             case 10:
-                
+                classHP = classHP + 5;         
             case 9:
-
+                classHP = classHP + 5;
             case 8:
+                classHP = classHP + 5;
                 this.classDex = this.classDex + 2;
             case 7:
-
+                classHP = classHP + 5;
             case 6:
-                
+                classHP = classHP + 5;
             case 5:
-
+                classHP = classHP + 5;
             case 4:
+                classHP = classHP + 5;
                 this.classDex = this.classDex + 2;
             case 3:
-
+                classHP = classHP + 5;
             case 2:
-                
+                classHP = classHP + 5;
             case 1:
 
         }

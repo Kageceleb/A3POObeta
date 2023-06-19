@@ -71,6 +71,14 @@ public class Character {
         return level;
     }
 
+    public Race getRace() {
+        return race;
+    }
+
+    public Classy getClassy() {
+        return classy;
+    }
+
     public Background getBackground() {
         return background;
     }

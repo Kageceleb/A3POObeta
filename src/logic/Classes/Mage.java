@@ -7,6 +7,7 @@ import logic.Interfaces.Classy;
 public class Mage implements Classy {
 
     private String className = "Mago";
+    private int classHP = 6;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -36,6 +37,11 @@ public class Mage implements Classy {
     @Override
     public String getClassName() {
         return className;
+    }
+
+    @Override
+    public int getClassHP() {
+        return classHP;
     }
 
     @Override
@@ -71,44 +77,46 @@ public class Mage implements Classy {
     public Mage(int level){
         switch (level) {
             case 20:
-
+                classHP = classHP + 4;
             case 19:
-
+                classHP = classHP + 4;
             case 18:
-
+                classHP = classHP + 4;
             case 17:
-
+                classHP = classHP + 4;
             case 16:
-
+                classHP = classHP + 4;
             case 15:
-
+                classHP = classHP + 4;
             case 14:
-
+                classHP = classHP + 4;
             case 13:
-
+                classHP = classHP + 4;
             case 12:
-
+                classHP = classHP + 4;
             case 11:
-
+                classHP = classHP + 4;
             case 10:
-
+                classHP = classHP + 4;
             case 9:
-
+                classHP = classHP + 4;
             case 8:
-
+                classHP = classHP + 4;
             case 7:
-
+                classHP = classHP + 4;
             case 6:
-
+                classHP = classHP + 4;
             case 5:
+                classHP = classHP + 4;
                 classMagics.add("Bola de Fogo");
                 classMagics.add("Invisibilidade");
             case 4:
-
+                classHP = classHP + 4;
             case 3:
+                classHP = classHP + 4;
                 classMagics.add("Armadura Arcana");
             case 2:
-
+                classHP = classHP + 4;
             case 1:
                 classMagics.add("Mãos Mágicas");
                 classMagics.add("Raio de Gelo");

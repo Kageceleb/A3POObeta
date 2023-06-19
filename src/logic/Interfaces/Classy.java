@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public interface Classy {
 
     public String getClassName();
+    public int getClassHP();
 
     public ArrayList<String> getClassEquipment();
     public ArrayList<String> getClassMagics();
