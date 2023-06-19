@@ -1,174 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+
+import tools.CharacterCreator;
 
 public class App {
     public static void main(String[] args) throws Exception {
         
         //Criar um novo personagem
 
-        Scanner s = new Scanner(System.in);
-        ArrayList<Integer> attributeValues = new ArrayList<>(Arrays.asList(15, 14, 13, 12, 10, 8));
+        CharacterCreator creator = new CharacterCreator();
 
-        int tempStr, tempDex, tempCon, tempInt, tempWis, tempCha;
+        int[] attributes = new int[6];
 
-        // Prompt for and validate strength
-        boolean validInput = false;
+        attributes = creator.assignAttributes();
 
-        System.out.println("Valores disponíveis:");
-        System.out.print(" | ");
-        for(int value : attributeValues) {
-            System.out.print(value + " | ");
-        }
-        System.out.println();
-
-        do {
-            System.out.println("Digite um valor para Força: ");
-            int inputValue = s.nextInt();
-            if (attributeValues.contains(inputValue)) {
-                tempStr = inputValue;
-                attributeValues.remove(Integer.valueOf(inputValue));
-                validInput = true;
-            } else {
-                System.out.println("Valor inválido para Força. Os valores disponíveis são:");
-                System.out.println();
-                System.out.print(" | ");
-                for(int value : attributeValues) {
-                    System.out.print(value + " | ");
-                }
-                System.out.println();
-            }
-        } while (!validInput);
-
-        System.out.println("Valores disponíveis:");
-        System.out.print(" | ");
-        for(int value : attributeValues) {
-            System.out.print(value + " | ");
-        }
-        System.out.println();
-
-        validInput = false;
-        do {
-            System.out.println("Digite um valor para Destreza: ");
-            int inputValue = s.nextInt();
-            if (attributeValues.contains(inputValue)) {
-                tempDex = inputValue;
-                attributeValues.remove(Integer.valueOf(inputValue));
-                validInput = true;
-            } else {
-                System.out.println("Valor inválido para Destreza. Os valores disponíveis são:");
-                System.out.println();
-                System.out.print(" | ");
-                for(int value : attributeValues) {
-                    System.out.print(value + " | ");
-                }
-                System.out.println();
-            }
-        } while (!validInput);
-
-        System.out.println("Valores disponíveis:");
-        System.out.print(" | ");
-        for(int value : attributeValues) {
-            System.out.print(value + " | ");
-        }
-        System.out.println();
-
-        validInput = false;
-        do {
-            System.out.println("Digite um valor para Constituição: ");
-            int inputValue = s.nextInt();
-            if (attributeValues.contains(inputValue)) {
-                tempCon = inputValue;
-                attributeValues.remove(Integer.valueOf(inputValue));
-                validInput = true;
-            } else {
-                System.out.println("Valor inválido para Constituição. Os valores disponíveis são:");
-                System.out.println();
-                System.out.print(" | ");
-                for(int value : attributeValues) {
-                    System.out.print(value + " | ");
-                }
-                System.out.println();
-            }
-        } while (!validInput);
-
-        System.out.println("Valores disponíveis:");
-        System.out.print(" | ");
-        for(int value : attributeValues) {
-            System.out.print(value + " | ");
-        }
-        System.out.println();
-
-        validInput = false;
-        do {
-            System.out.println("Digite um valor para Inteligência: ");
-            int inputValue = s.nextInt();
-            if (attributeValues.contains(inputValue)) {
-                tempInt = inputValue;
-                attributeValues.remove(Integer.valueOf(inputValue));
-                validInput = true;
-            } else {
-                System.out.println("Valor inválido para Inteligência. Os valores disponíveis são:");
-                System.out.println();
-                System.out.print(" | ");
-                for(int value : attributeValues) {
-                    System.out.print(value + " | ");
-                }
-                System.out.println();
-            }
-        } while (!validInput);
-
-        System.out.println("Valores disponíveis:");
-        System.out.print(" | ");
-        for(int value : attributeValues) {
-            System.out.print(value + " | ");
-        }
-        System.out.println();
-
-        validInput = false;
-        do {
-            System.out.println("Digite um valor para Sabedoria: ");
-            int inputValue = s.nextInt();
-            if (attributeValues.contains(inputValue)) {
-                tempWis = inputValue;
-                attributeValues.remove(Integer.valueOf(inputValue));
-                validInput = true;
-            } else {
-                System.out.println("Valor inválido para Sabedoria. Os valores disponíveis são:");
-                System.out.println();
-                System.out.print(" | ");
-                for(int value : attributeValues) {
-                    System.out.print(value + " | ");
-                }
-                System.out.println();
-            }
-        } while (!validInput);
-
-        System.out.println("Valores disponíveis:");
-        System.out.print(" | ");
-        for(int value : attributeValues) {
-            System.out.print(value + " | ");
-        }
-        System.out.println();
-
-        validInput = false;
-        do {
-            System.out.println("Digite um valor para Carisma: ");
-            int inputValue = s.nextInt();
-            if (attributeValues.contains(inputValue)) {
-                tempCha = inputValue;
-                attributeValues.remove(Integer.valueOf(inputValue));
-                validInput = true;
-            } else {
-                System.out.println("Valor inválido para Carisma. Os valores disponíveis são:");
-                System.out.println();
-                System.out.print(" | ");
-                for(int value : attributeValues) {
-                    System.out.print(value + " | ");
-                }
-                System.out.println();
-            }
-        } while (!validInput);
+        //Teste para o retorno dos valores
+        System.out.println("Atributos:");
+        System.out.println("Força: " + attributes[0]);
+        System.out.println("Destreza: " + attributes[1]);
+        System.out.println("Constituição: " + attributes[2]);
+        System.out.println("Inteligência: " + attributes[3]);
+        System.out.println("Sabedoria: " + attributes[4]);
+        System.out.println("Carisma: " + attributes[5]);
 
     }
 }
