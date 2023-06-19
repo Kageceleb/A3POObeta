@@ -306,7 +306,7 @@ public class Character {
                 this.alignment = "Caótico Mau";
             break;
             case 9:
-                this.alignment = "Nautro Mau";
+                this.alignment = "Neutro Mau";
             break;
             
         }
