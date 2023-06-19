@@ -29,6 +29,8 @@ public class Character {
     private ArrayList<String> equipment;
     private ArrayList<String> magics;
 
+
+
     public String getName() {
         return name;
     }
@@ -69,8 +71,6 @@ public class Character {
         return level;
     }
 
-    
-
     public Background getBackground() {
         return background;
     }
@@ -82,6 +82,8 @@ public class Character {
     public ArrayList<String> getMagics() {
         return magics;
     }
+
+
 
     public Character(String name, String player, String alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
         
@@ -189,5 +191,6 @@ public class Character {
             this.magics.add(magic);
         }
     }
+
     
 }
