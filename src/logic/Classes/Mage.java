@@ -8,6 +8,7 @@ public class Mage implements Classy {
 
     private String className = "Mago";
     private int classHP = 6;
+    private int classAC = 12;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -45,6 +46,11 @@ public class Mage implements Classy {
     }
 
     @Override
+    public int getClassAC() {
+        return classAC;
+    }
+
+    @Override
     public int getClassStr() {
         return classStr;
     }
@@ -78,6 +84,7 @@ public class Mage implements Classy {
         switch (level) {
             case 20:
                 classHP = classHP + 4;
+                this.classInt = this.classInt + 2;
             case 19:
                 classHP = classHP + 4;
             case 18:
@@ -86,6 +93,7 @@ public class Mage implements Classy {
                 classHP = classHP + 4;
             case 16:
                 classHP = classHP + 4;
+                this.classInt = this.classInt + 2;
             case 15:
                 classHP = classHP + 4;
             case 14:
@@ -94,6 +102,7 @@ public class Mage implements Classy {
                 classHP = classHP + 4;
             case 12:
                 classHP = classHP + 4;
+                this.classInt = this.classInt + 2;
             case 11:
                 classHP = classHP + 4;
             case 10:
@@ -102,6 +111,7 @@ public class Mage implements Classy {
                 classHP = classHP + 4;
             case 8:
                 classHP = classHP + 4;
+                this.classInt = this.classInt + 2;
             case 7:
                 classHP = classHP + 4;
             case 6:
@@ -112,6 +122,7 @@ public class Mage implements Classy {
                 classMagics.add("Invisibilidade");
             case 4:
                 classHP = classHP + 4;
+                this.classInt = this.classInt + 2;
             case 3:
                 classHP = classHP + 4;
                 classMagics.add("Armadura Arcana");

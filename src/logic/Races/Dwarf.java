@@ -5,6 +5,7 @@ import logic.Interfaces.Race;
 public class Dwarf implements Race {
 
     private String raceName = "Anão";
+    private double raceSpeed = 7.5;
 
     private int raceStr = 2;
     private int raceDex = 0;
@@ -16,6 +17,11 @@ public class Dwarf implements Race {
     @Override
     public String getRaceName() {
         return raceName;
+    }
+
+    @Override
+    public double getRaceSpeed() {
+        return raceSpeed;
     }
 
     @Override

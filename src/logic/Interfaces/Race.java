@@ -3,6 +3,7 @@ package logic.Interfaces;
 public interface Race {
 
     public String getRaceName();
+    public double getRaceSpeed();
     
     public int getRaceStr();
     public int getRaceDex();

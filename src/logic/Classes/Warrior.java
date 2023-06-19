@@ -8,6 +8,7 @@ public class Warrior implements Classy {
 
     private String className = "Guerreiro";
     private int classHP = 10;
+    private int classAC = 17;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -46,6 +47,11 @@ public class Warrior implements Classy {
     @Override
     public int getClassHP() {
         return classHP;
+    }
+
+    @Override
+    public int getClassAC() {
+        return classAC;
     }
 
     @Override

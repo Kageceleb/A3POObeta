@@ -8,6 +8,7 @@ public class Priest implements Classy {
 
     private String className = "Sacerdote";
     private int classHP = 8;
+    private int classAC = 15;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -22,11 +23,7 @@ public class Priest implements Classy {
         }
     };
 
-    ArrayList<String> classMagics =  new ArrayList<String>(){
-        {
-            add("item");
-        }
-    };
+    ArrayList<String> classMagics =  new ArrayList<String>();
 
     @Override
     public ArrayList<String> getClassEquipment() {
@@ -46,6 +43,11 @@ public class Priest implements Classy {
     @Override
     public int getClassHP() {
         return classHP;
+    }
+
+    @Override
+    public int getClassAC() {
+        return classAC;
     }
 
     @Override
@@ -82,6 +84,7 @@ public class Priest implements Classy {
         switch (level) {
             case 20:
                 classHP = classHP + 5;
+                this.classWis = this.classWis + 2;
             case 19:
                 classHP = classHP + 5;
             case 18:
@@ -90,6 +93,7 @@ public class Priest implements Classy {
                 classHP = classHP + 5;
             case 16:
                 classHP = classHP + 5;
+                this.classWis = this.classWis + 2;
             case 15:
                 classHP = classHP + 5;
             case 14:
@@ -98,6 +102,7 @@ public class Priest implements Classy {
                 classHP = classHP + 5;
             case 12:
                 classHP = classHP + 5;
+                this.classWis = this.classWis + 2;
             case 11:
                 classHP = classHP + 5;
             case 10:
@@ -106,6 +111,7 @@ public class Priest implements Classy {
                 classHP = classHP + 5;
             case 8:
                 classHP = classHP + 5;
+                this.classWis = this.classWis + 2;
             case 7:
                 classHP = classHP + 5;
             case 6:
@@ -114,6 +120,7 @@ public class Priest implements Classy {
                 classHP = classHP + 5; 
             case 4:
                 classHP = classHP + 5;
+                this.classWis = this.classWis + 2;
             case 3:
                 classHP = classHP + 5;
                 classMagics.add("Cura Maior");

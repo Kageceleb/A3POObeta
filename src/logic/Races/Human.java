@@ -5,6 +5,7 @@ import logic.Interfaces.Race;
 public class Human implements Race {
 
     private String raceName = "Humano";
+    private double raceSpeed = 9;
 
     private int raceStr = 1;
     private int raceDex = 1;
@@ -16,6 +17,11 @@ public class Human implements Race {
     @Override
     public String getRaceName() {
         return raceName;
+    }
+
+    @Override
+    public double getRaceSpeed() {
+        return raceSpeed;
     }
 
     @Override

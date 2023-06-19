@@ -6,6 +6,7 @@ public interface Classy {
 
     public String getClassName();
     public int getClassHP();
+    public int getClassAC();
 
     public ArrayList<String> getClassEquipment();
     public ArrayList<String> getClassMagics();

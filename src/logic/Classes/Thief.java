@@ -8,6 +8,7 @@ public class Thief implements Classy {
 
     private String className = "Ladino";
     private int classHP = 8;
+    private int classAC = 14;
 
     private int classStr = 0;
     private int classDex = 0;
@@ -46,6 +47,11 @@ public class Thief implements Classy {
     @Override
     public int getClassHP() {
         return classHP;
+    }
+
+    @Override
+    public int getClassAC() {
+        return classAC;
     }
 
     @Override
