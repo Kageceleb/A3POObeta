@@ -30,7 +30,7 @@ public class Character {
     private ArrayList<String> magics;
 
     public String getName() {
-    return name;
+        return name;
     }
 
     public String getPlayer() {
