@@ -29,6 +29,60 @@ public class Character {
     private ArrayList<String> equipment;
     private ArrayList<String> magics;
 
+    public String getName() {
+    return name;
+    }
+
+    public String getPlayer() {
+        return player;
+    }
+
+    public String getAlignment() {
+        return alignment;
+    }
+
+    public int getStrMain() {
+        return strMain;
+    }
+
+    public int getDexMain() {
+        return dexMain;
+    }
+
+    public int getConMain() {
+        return conMain;
+    }
+
+    public int getIntMain() {
+        return intMain;
+    }
+
+    public int getWisMain() {
+        return wisMain;
+    }
+
+    public int getChaMain() {
+        return chaMain;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    
+
+    public Background getBackground() {
+        return background;
+    }
+
+    public ArrayList<String> getEquipment() {
+        return equipment;
+    }
+
+    public ArrayList<String> getMagics() {
+        return magics;
+    }
+
     public Character(String name, String player, String alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
         
         this.name = name;
