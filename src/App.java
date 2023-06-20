@@ -42,11 +42,11 @@ public class App {
         //attributes = creator.assignAttributes();
 
         // Character teste para visualizar ficha
-        //Character testChar = new Character("Goliath", "Jonas", 4, 15, 14, 13, 12, 10, 8, 5, 2, 4, 7);
+        // LogicCharacter testChar = new LogicCharacter("Goliath", "Jonas", 4, 15, 14, 13, 12, 10, 8, 5, 2, 4, 7);
 
-        //System.out.println(testChar);
+        // System.out.println(testChar);
 
-        SwingUtilities.invokeLater(new Runnable() {
+        /*SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 JFrame frame = new JFrame("Background Selection");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,7 +54,7 @@ public class App {
                 frame.setSize(800, 600);
                 frame.setVisible(true);
             }
-        });
+        });*/
 
     }
 }
