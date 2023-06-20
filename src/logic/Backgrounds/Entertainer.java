@@ -26,6 +26,22 @@ public class Entertainer implements Background {
     }
 
     @Override
+    public String getBGDescription() {
+        return "Descrição teste sumermega descricao a descricao das descricoes bem descrita e descrituda";
+    }
+
+    @Override
+    public String getBGItems() {
+        return "Itens teste \n "
+        +"Item 2 \n Item 3 \n Tem 4";
+    }
+
+    @Override
+    public String getBGBonuses() {
+        return "Bonus teste lalalalal lala alalala lalala lal lalalala";
+    }
+
+    @Override
     public Skills getBGSkills() {
 
         return BGSkills;

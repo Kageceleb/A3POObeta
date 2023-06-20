@@ -12,4 +12,10 @@ public interface Background {
 
     public ArrayList<String> getBGEquipment();
 
+    public String getBGDescription();
+
+    public String getBGItems();
+
+    public String getBGBonuses();
+
 }

@@ -1,6 +1,10 @@
 
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+import gui.BackgroundSelectionPanel;
 import logic.LogicCharacter;
 import repository.Character;
 import repository.CharacterRepository;
@@ -8,7 +12,10 @@ import tools.CharacterCreator;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
+
+
+
+        /*Scanner sc = new Scanner(System.in);
         int menu, id;
         String name;
         Character newChar;
@@ -26,18 +33,28 @@ public class App {
                 break;
             }
 
-        } while (menu != 7);
+        } while (menu != 7);*/
 
-        CharacterCreator creator = new CharacterCreator();
+        //CharacterCreator creator = new CharacterCreator();
 
-        int[] attributes = new int[6];
+        //int[] attributes = new int[6];
 
-        // attributes = creator.assignAttributes();
+        //attributes = creator.assignAttributes();
 
         // Character teste para visualizar ficha
-        // Character testChar = new Character("Goliath", "Jonas", 4, 15, 14, 13, 12, 10, 8, 5, 2, 4, 7);
+        //Character testChar = new Character("Goliath", "Jonas", 4, 15, 14, 13, 12, 10, 8, 5, 2, 4, 7);
 
-        // System.out.println(testChar);
+        //System.out.println(testChar);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                JFrame frame = new JFrame("Background Selection");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.getContentPane().add(new BackgroundSelectionPanel());
+                frame.setSize(800, 600);
+                frame.setVisible(true);
+            }
+        });
 
     }
 }

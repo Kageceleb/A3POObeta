@@ -26,6 +26,21 @@ public class Charlatan implements Background {
     }
 
     @Override
+    public String getBGDescription() {
+        return "Descrição teste";
+    }
+
+    @Override
+    public String getBGItems() {
+        return "Itens teste";
+    }
+
+    @Override
+    public String getBGBonuses() {
+        return "Bonus teste";
+    }
+
+    @Override
     public Skills getBGSkills() {
 
         return BGSkills;

@@ -106,5 +106,7 @@ public class CharacterCreator {
 
         return attributeArray;
     }
+
+    
     
 }
