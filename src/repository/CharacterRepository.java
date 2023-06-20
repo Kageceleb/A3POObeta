@@ -16,23 +16,24 @@ class CharacterRepository implements CRUDRepository<Character> {
   // através do Override
   @Override
   public int create(Character entity) {
-    Character newCharacter = Character(name,player,alignment, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, background)
+    Character newChar = new Character(name)
      try{
-      String sql = "INSERT INTO sheetmain (name, player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, aligment, backGround) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      String sql = "INSERT INTO sheetmain (name, ) VALUES (?)";
       PreparedStatement statement = 
-      statement.setString(1, newCharacter.name);
-      statement.setString(2, newCharacter.player);
-      statement.setString(3, newCharacter.alignment);
-      statement.setString(4, newCharacter.strMain);
-      statement.setString(5, newCharacter.dexMain);
-      statement.setString(6, newCharacter.conMain);
-      statement.setString(7, newCharacter.intMain);
-      statement.setString(8, newCharacter.wisMain);
-      statement.setString(9, newCharacter.chaMain);
-      statement.setString(10, newCharacter.lvl);
-      statement.setString(11, newCharacter.race);
-      statement.setString(12, newCharacter.classy);
-      statement.setString(12, newCharacter.background);
+      statement.setString(1, Character.name);
+      // player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, aligment, backGround
+      // statement.setString(2, newCharacter.player);
+      // statement.setString(3, newCharacter.alignment);
+      // statement.setString(4, newCharacter.strMain);
+      // statement.setString(5, newCharacter.dexMain);
+      // statement.setString(6, newCharacter.conMain);
+      // statement.setString(7, newCharacter.intMain);
+      // statement.setString(8, newCharacter.wisMain);
+      // statement.setString(9, newCharacter.chaMain);
+      // statement.setString(10, newCharacter.lvl);
+      // statement.setString(11, newCharacter.race);
+      // statement.setString(12, newCharacter.classy);
+      // statement.setString(12, newCharacter.background);
 
     ResultSet rs = statement.executeQuery();
             MyConnection.execute(sql);

@@ -74,7 +74,7 @@ public class Character extends Entity {
         return chaMain;
     }
     public int getLevel() {
-        return level;
+        return lvl;
     }
     public int getRace() {
         return race;
@@ -113,7 +113,7 @@ public class Character extends Entity {
         this.chaMain = chaMain;
     }
     public void setLevel(int level) {
-        this.level = level;
+        this.lvl = level;
     }
     public void setRace(int race) {
         this.race = race;
