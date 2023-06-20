@@ -1,6 +1,5 @@
 package gui;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,81 +14,6 @@ import logic.Backgrounds.*;
 import logic.Interfaces.Background;
 
 public class BackgroundSelectionPanel extends JPanel {
-    
-    /*private Background[] backgrounds = {new Acolyte(), new Charlatan(), new Criminal(), new Entertainer(), new FolkHero(), new GuildArtisan(), new Hermit(), new Noble(), new Outlander(), new Sage(), new Sailor(), new Soldier(), new Urchin()};
-    private int currentIndex = 0;
-
-    private JLabel nameLabel;
-
-    public BackgroundSelectionPanel() {
-        setLayout(new BorderLayout());
-
-        JButton previousButton = new JButton("Previous");
-        previousButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                previousBackground();
-            }
-        });
-
-        JButton nextButton = new JButton("Next");
-        nextButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                nextBackground();
-            }
-        });
-
-        nameLabel = new JLabel();
-        nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
-
-        JButton chooseButton = new JButton("Choose");
-        chooseButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                chooseBackground();
-            }
-        });
-
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(previousButton);
-        buttonPanel.add(nextButton);
-
-        JPanel centerPanel = new JPanel(new GridLayout(2, 1));
-        centerPanel.add(nameLabel);
-        centerPanel.add(chooseButton);
-
-        add(buttonPanel, BorderLayout.NORTH);
-        add(centerPanel, BorderLayout.CENTER);
-
-        updateFields();
-    }
-
-    private void previousBackground() {
-        currentIndex = (currentIndex - 1 + backgrounds.length) % backgrounds.length;
-        updateFields();
-    }
-
-    private void nextBackground() {
-        currentIndex = (currentIndex + 1) % backgrounds.length;
-        updateFields();
-    }
-
-    private void updateFields() {
-        nameLabel.setText(backgrounds[currentIndex].getBGName());
-    }
-
-    private void chooseBackground() {
-        Background selectedBackground = backgrounds[currentIndex];
-        // Do something with the selected background (e.g., assign it to a variable)
-
-        // Example: Creating a new instance of the selected background
-        Background tempBG = null;
-        if (selectedBackground instanceof Acolyte) {
-            tempBG = new Acolyte();
-        } else if (selectedBackground instanceof Soldier) {
-            tempBG = new Soldier();
-        }
-
-        System.out.println("Selected Background: " + tempBG.getBGName());
-    }*/
 
     private Background[] backgrounds = {
             new Acolyte(), new Charlatan(), new Criminal(), new Entertainer(),
