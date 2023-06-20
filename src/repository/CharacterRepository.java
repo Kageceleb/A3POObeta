@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
@@ -21,14 +22,13 @@ public class CharacterRepository implements CRUDRepository<Character> {
   // através do Override
   @Override
   public int create(Character entity) {
-                
-    System.out.println("Qual o nome do personagem?");
+     System.out.println("Qual o nome do personagem?");
     int id = 55;
     String name = sc.nextLine();
        
     try{
       String sql = "INSERT INTO sheetmain (id,name) VALUES (?,?)";
-      PreparedStatement statement = DBConnectionSingleton.execute(sql);
+      PreparedStatement statement = DBConnectionSingleton.getConnection().prepareStatement(sql);
       statement.setInt(1, id);
       statement.setString(2, name);
       // player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, aligment, backGround
@@ -59,44 +59,20 @@ public class CharacterRepository implements CRUDRepository<Character> {
   return 1;
   }
 
-    public void cadastrar() {
-        String sql = "INSERT INTO sheetmain (name) VALUES (?) ";
-        PreparedStatement st=MyConnection.execute.conn
+   
+  public int delete(Character entity) {
+    return 0;
 
-        MyConnection.execute(sql);
-    }
-
-
+  }
 
   public ArrayList<Character> list(Character entity) {
     ArrayList<Character> entities = new ArrayList<>();
 
-    String sql = "SELECT id, name FROM sheetmain;";
-
-    ResultSet rs = MyConnection.execute(sql);
-
-    if (rs == null)
-      return entities;
-    try {
-      while (rs.next()) {
-        int id = rs.getInt(1);
-        String name = rs.getString(2);
-
-        entities.add(new Character(id, name));
-      }
-    } catch (Exception e) {
-      System.out.println("==>" + e);
-    }
-
-    return entities;
-  }
-
-  public int delete(Character entity) {
-
+        return entities;
   }
 
   public int update(Character entity) {
-
+        return 0;
   }
 
 }
