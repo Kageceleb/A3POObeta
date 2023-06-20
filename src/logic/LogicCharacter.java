@@ -316,7 +316,7 @@ public class LogicCharacter {
 
     //Construtor
 
-    public Character(String name, String player, int alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
+    public LogicCharacter(String name, String player, int alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
         
         this.name = name;
         this.player = player;
