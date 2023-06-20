@@ -19,8 +19,12 @@ public class App {
             menu = sc.nextInt();
             switch (menu) {
                 case 1:
-                CharacterRepository.create(id, name);
+                CharacterRepository.create();
                 break;
+                case 3:
+                System.out.println("do nothing");;
+                break;
+            }
 
         } while (menu != 7);
 
@@ -37,4 +41,4 @@ public class App {
 
     }
 }
-}
+

@@ -22,15 +22,13 @@ public class CharacterRepository implements CRUDRepository<Character> {
   // através do Override
   @Override
   public int create(Character entity) {
-     System.out.println("Qual o nome do personagem?");
-    int id = 55;
+    System.out.println("Qual o nome do personagem?");
     String name = sc.nextLine();
        
     try{
-      String sql = "INSERT INTO sheetmain (id,name) VALUES (?,?)";
+      String sql = "INSERT INTO sheetmain (id,name) VALUES (?)";
       PreparedStatement statement = DBConnectionSingleton.getConnection().prepareStatement(sql);
-      statement.setInt(1, id);
-      statement.setString(2, name);
+      statement.setString(1, name);
       // player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, aligment, backGround
       // statement.setString(2, newCharacter.player);
       // statement.setString(3, newCharacter.alignment);
@@ -44,7 +42,6 @@ public class CharacterRepository implements CRUDRepository<Character> {
       // statement.setString(11, newCharacter.race);
       // statement.setString(12, newCharacter.classy);
       // statement.setString(12, newCharacter.background);
-          newChar = new Character(id,name);
 
 
     ResultSet rs = statement.executeQuery();
