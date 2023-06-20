@@ -19,7 +19,11 @@ public class Priest implements Classy {
 
     ArrayList<String> classEquipment =  new ArrayList<String>(){
         {
-            add("item");
+            add("Maça Sagrada");
+            add("Cota de Malha");
+            add("Cantil de Água Benta");
+            add("Poção de Mana x3");
+            add("Poção de Vida x6");
         }
     };
 

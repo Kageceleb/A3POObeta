@@ -19,7 +19,11 @@ public class Mage implements Classy {
 
     ArrayList<String> classEquipment =  new ArrayList<String>(){
         {
-            add("item");
+            add("Cajado");
+            add("Grimório de Feitiços");
+            add("Pergaminhos Mágicos x5");
+            add("Poção de Mana x3");
+            add("Poção de Vida x2");
         }
     };
 

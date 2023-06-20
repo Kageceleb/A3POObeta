@@ -19,7 +19,11 @@ public class Thief implements Classy {
 
     ArrayList<String> classEquipment =  new ArrayList<String>(){
         {
-            add("item");
+            add("Adaga de Aço x2");
+            add("Bomba de Fumaça x3");
+            add("Gazuas x12");
+            add("Arco Curto");
+            add("Flechas x20");
         }
     };
 

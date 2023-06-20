@@ -1,4 +1,5 @@
 
+import logic.Character;
 import tools.CharacterCreator;
 
 public class App {
@@ -10,16 +11,13 @@ public class App {
 
         int[] attributes = new int[6];
 
-        attributes = creator.assignAttributes();
+        //attributes = creator.assignAttributes();
 
-        //Teste para o retorno dos valores
-        System.out.println("Atributos:");
-        System.out.println("Força: " + attributes[0]);
-        System.out.println("Destreza: " + attributes[1]);
-        System.out.println("Constituição: " + attributes[2]);
-        System.out.println("Inteligência: " + attributes[3]);
-        System.out.println("Sabedoria: " + attributes[4]);
-        System.out.println("Carisma: " + attributes[5]);
+        //Character teste para visualizar ficha
+        Character testChar = new Character("Goliath","Jonas",4,15,14,13,12,10,8,5,2,4,7);
+
+        System.out.println(testChar);
+
 
     }
 }
