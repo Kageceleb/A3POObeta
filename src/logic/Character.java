@@ -1,5 +1,6 @@
 package logic;
 
+import logic.Backgrounds.*;
 import logic.Interfaces.*;
 import logic.Races.*;
 
@@ -11,7 +12,11 @@ public class Character {
     
     private String name;
     private String player;
-    private String alignment;
+    private int alignment;
+
+    private int raceNumber;
+    private int classNumber;
+    private int BGNumber;
     
     private int strMain;
     private int dexMain;
@@ -39,8 +44,33 @@ public class Character {
         return player;
     }
 
-    public String getAlignment() {
+    public int getAlignmentNumber() {
         return alignment;
+    }
+    public String getAlignment() {
+
+        switch(alignment){
+            case 1:
+                return "Leal Bom";
+            case 2:
+                return "Caótico Bom";
+            case 3:
+                return "Neutro Bom";
+            case 4:
+                return "Leal Neutro";
+            case 5:
+                return "Neutro";
+            case 6:
+                return "Caótico Neutro";
+            case 7:
+                return "Leal Mau";
+            case 8:
+                return "Caótico Mau";
+            case 9:
+                return "Neutro Mau";
+            default:
+                return "";
+        }
     }
 
     public int getLevel() {
@@ -272,6 +302,18 @@ public class Character {
         return magics;
     }
 
+    public int getRaceNumber() {
+        return raceNumber;
+    }
+
+    public int getClassNumber() {
+        return classNumber;
+    }
+
+    public int getBGNumber() {
+        return BGNumber;
+    }
+
     //Construtor
 
     public Character(String name, String player, int alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
@@ -279,37 +321,11 @@ public class Character {
         this.name = name;
         this.player = player;
         this.level = level;
+        this.alignment = alignment;
+        this.raceNumber = race;
+        this.classNumber = classy;
+        this.BGNumber = background;
 
-        switch(alignment){
-            case 1:
-                this.alignment = "Leal Bom";
-            break;
-            case 2:
-                this.alignment = "Caótico Bom";
-            break;
-            case 3:
-                this.alignment = "Neutro Bom";
-            break;
-            case 4:
-                this.alignment = "Leal Neutro";
-            break;
-            case 5:
-                this.alignment = "Neutro";
-            break;
-            case 6:
-                this.alignment = "Caótico Neutro";
-            break;
-            case 7:
-                this.alignment = "Leal Mau";
-            break;
-            case 8:
-                this.alignment = "Caótico Mau";
-            break;
-            case 9:
-                this.alignment = "Neutro Mau";
-            break;
-            
-        }
 
         switch(race) {
             case 1:
@@ -340,43 +356,43 @@ public class Character {
 
         switch(background) {
             case 1:
-
+                this.background = new Acolyte();
             break;
             case 2:
-
+                this.background = new Charlatan();
             break;
             case 3:
-
+                this.background = new Criminal();
             break;
             case 4:
-
+                this.background = new Entertainer();
             break;
             case 5:
-
+                this.background = new FolkHero();
             break;
             case 6:
-
+                this.background = new GuildArtisan();
             break;
             case 7:
-
+                this.background = new Hermit();
             break;
             case 8:
-
+                this.background = new Noble();
             break;
             case 9:
-
+                this.background = new Outlander();
             break;
             case 10:
-
+                this.background = new Sage();
             break;
             case 11:
-
+                this.background = new Sailor();
             break;
             case 12:
-
+                this.background = new Soldier();
             break;
             case 13:
-
+                this.background = new Urchin();
             break;
         }
 
@@ -413,33 +429,33 @@ public class Character {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("------------------------------------------------------------------");
-        sb.append("--------------- |       Ficha de Personagem       | --------------");
-        sb.append("------------------------------------------------------------------");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("------- |       Ficha de Personagem       | -------").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
         sb.append("Nome do personagem: ").append(name).append("   |   ").append("Jogador: ").append(player).append("\n");
         sb.append("Raça: ").append(race.getRaceName()).append("   |   ").append("Classe: ").append(classy.getClassName()).append("\n");
-        sb.append("Nível: ").append(level).append("   |   ").append("Alinhamento: ").append(alignment).append("\n");
-        sb.append("Antecedente: ").append(background.getBGName()).append("   |   ").append("Alinhamento: ").append(alignment).append("\n");
+        sb.append("Nível: ").append(level).append("   |   ").append("Alinhamento: ").append(getAlignment()).append("\n");
+        sb.append("Antecedente: ").append(background.getBGName()).append("\n");
         sb.append("\n");
-        sb.append("------------------------------------------------------------------");
-        sb.append("--------------- |            Atributos            | --------------");
-        sb.append("------------------------------------------------------------------");
-        sb.append("FOR ").append(this.getStrMain()).append("( ").append(this.getStrMod()).append(" )").append(player).append("\n");
-        sb.append("DES ").append(this.getStrMain()).append("( ").append(this.getStrMod()).append(" )").append(player).append("\n");
-        sb.append("CON ").append(this.getStrMain()).append("( ").append(this.getStrMod()).append(" )").append(player).append("\n");
-        sb.append("INT ").append(this.getStrMain()).append("( ").append(this.getStrMod()).append(" )").append(player).append("\n");
-        sb.append("SAB ").append(this.getStrMain()).append("( ").append(this.getStrMod()).append(" )").append(player).append("\n");
-        sb.append("CAR ").append(this.getStrMain()).append("( ").append(this.getStrMod()).append(" )").append(player).append("\n");
-        sb.append("------------------------------------------------------------------");
-        sb.append("--------------- |             Combate             | --------------");
-        sb.append("------------------------------------------------------------------");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("------- |            Atributos            | -------").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("FOR ").append(this.getStrMain()).append("  ( ").append(this.getStrMod()).append(" )").append("\n");
+        sb.append("DES ").append(this.getDexMain()).append("  ( ").append(this.getDexMod()).append(" )").append("\n");
+        sb.append("CON ").append(this.getConMain()).append("  ( ").append(this.getConMod()).append(" )").append("\n");
+        sb.append("INT ").append(this.getIntMain()).append("  ( ").append(this.getIntMod()).append(" )").append("\n");
+        sb.append("SAB ").append(this.getWisMain()).append("  ( ").append(this.getWisMod()).append(" )").append("\n");
+        sb.append("CAR ").append(this.getChaMain()).append("  ( ").append(this.getChaMod()).append(" )").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("------- |             Combate             | -------").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
         sb.append("Pontos de Vida Totais: ").append(this.getMaxHP()).append("\n");
         sb.append("Iniciativa: ").append(this.getDexMod()).append("\n");
         sb.append("Velocidade: ").append(race.getRaceSpeed()).append("m").append("\n");
         sb.append("Classe de Armadura: ").append(classy.getClassAC()).append("\n");
-        sb.append("------------------------------------------------------------------");
-        sb.append("--------------- |           Habilidades           | --------------");
-        sb.append("------------------------------------------------------------------");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("------- |           Habilidades           | -------").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
         sb.append("Acrobacia ").append(this.getAcrobatics()).append(" (Des)").append("\n");
         sb.append("Arcanismo ").append(this.getArcana()).append(" (Int)").append("\n");
         sb.append("Atletismo ").append(this.getAthletics()).append(" (For)").append("\n");
@@ -458,23 +474,23 @@ public class Character {
         sb.append("Prestidigitação ").append(this.getSleighofHand()).append(" (Des)").append("\n");
         sb.append("Religião ").append(this.getReligion()).append(" (Sab)").append("\n");
         sb.append("Sobrevivência ").append(this.getSurvival()).append(" (Sab)").append("\n");
-        sb.append("------------------------------------------------------------------");
-        sb.append("--------------- |           Inventário            | --------------");
-        sb.append("------------------------------------------------------------------");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("------- |           Inventário            | -------").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
 
         for (String item : equipment) {
             sb.append(item).append("\n");
         }
         
-        sb.append("------------------------------------------------------------------");
-        sb.append("--------------- |             Magias              | --------------");
-        sb.append("------------------------------------------------------------------");
+        sb.append("---------------------------------------------------").append("\n");
+        sb.append("------- |             Magias              | -------").append("\n");
+        sb.append("---------------------------------------------------").append("\n");
 
         for (String magic : magics) {
             sb.append(magic).append("\n");
         }
 
-        sb.append("------------------------------------------------------------------");
+        sb.append("---------------------------------------------------").append("\n");
         
         return sb.toString();
     }

@@ -19,7 +19,12 @@ public class Warrior implements Classy {
 
     ArrayList<String> classEquipment =  new ArrayList<String>(){
         {
-            add("item");
+            add("Espada Curta");
+            add("Escudo de Madeira");
+            add("Arco Longo");
+            add("Flechas x20");
+            add("Armadura de Talas");
+            add("Poção de Vida x3");
         }
     };
 
