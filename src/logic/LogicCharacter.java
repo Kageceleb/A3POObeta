@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import logic.Classes.*;
 
-public class Character {
+public class LogicCharacter {
     
     private String name;
     private String player;

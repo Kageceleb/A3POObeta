@@ -3,33 +3,35 @@ package repository;
 public class Character extends Entity {
     public Character(
             int id,
-            String name,
-            String player,
-            int alignment,
-            int strMain,
-            int dexMain,
-            int conMain,
-            int intMain,
-            int wisMain,
-            int chaMain,
-            int lvl,
-            int race,
-            int classy,
-            int background) {
+            String name
+            // ,
+            // String player,
+            // int alignment,
+            // int strMain,
+            // int dexMain,
+            // int conMain,
+            // int intMain,
+            // int wisMain,
+            // int chaMain,
+            // int lvl,
+            // int race,
+            // int classy,
+            // int background
+            ) {
         super(id);
         this.name = name;
-        this.player = player;
-        this.alignment = alignment;
-        this.strMain = strMain;
-        this.dexMain = dexMain;
-        this.conMain = conMain;
-        this.intMain = intMain;
-        this.wisMain = wisMain;
-        this.chaMain = chaMain;
-        this.lvl = lvl;
-        this.race = race;
-        this.classy = classy;
-        this.background = background;
+        // this.player = player;
+        // this.alignment = alignment;
+        // this.strMain = strMain;
+        // this.dexMain = dexMain;
+        // this.conMain = conMain;
+        // this.intMain = intMain;
+        // this.wisMain = wisMain;
+        // this.chaMain = chaMain;
+        // this.lvl = lvl;
+        // this.race = race;
+        // this.classy = classy;
+        // this.background = background;
     }
 
     public String name;

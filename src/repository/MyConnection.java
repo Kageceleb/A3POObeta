@@ -12,7 +12,7 @@ public class MyConnection {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String SENHA = "root";
     
-    public static void myExecute(String query){
+    public static void execute(String query){
         try {
             Class.forName( DRIVER );
             Connection conn = DriverManager.getConnection(URL,USER,SENHA);

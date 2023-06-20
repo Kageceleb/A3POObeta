@@ -1,23 +1,39 @@
 
-import logic.Character;
+import java.util.Scanner;
+
+import logic.LogicCharacter;
+import repository.Character;
+import repository.CharacterRepository;
 import tools.CharacterCreator;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
-        //Criar um novo personagem
+                Scanner sc = new Scanner(System.in);
+        int menu;
+        // Criar um novo personagem
+        do {
+            System.out.println("1 - Cadastrar Personagem");
+            menu = sc.nextInt();
+            switch (menu) {
+                case 1:
+                System.out.println("Qual o nome do personagem?");
+                String name = sc.nextLine();
+                Character newChar = new Character(name)
+                newChar.create();
+                break;
+
+        } while (menu != 7);
 
         CharacterCreator creator = new CharacterCreator();
 
         int[] attributes = new int[6];
 
-        //attributes = creator.assignAttributes();
+        // attributes = creator.assignAttributes();
 
-        //Character teste para visualizar ficha
-        Character testChar = new Character("Goliath","Jonas",4,15,14,13,12,10,8,5,2,4,7);
+        // Character teste para visualizar ficha
+        Character testChar = new Character("Goliath", "Jonas", 4, 15, 14, 13, 12, 10, 8, 5, 2, 4, 7);
 
         System.out.println(testChar);
-
 
     }
 }

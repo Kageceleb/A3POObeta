@@ -7,7 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-class CharacterRepository implements CRUDRepository<Character> {
+import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
+
+public class CharacterRepository implements CRUDRepository<Character> {
   String name, player;
   int alignment, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, background;
 
@@ -16,8 +18,8 @@ class CharacterRepository implements CRUDRepository<Character> {
   // através do Override
   @Override
   public int create(Character entity) {
-    Character newChar = new Character(name)
      try{
+      Character newChar = new Character(name);
       String sql = "INSERT INTO sheetmain (name, ) VALUES (?)";
       PreparedStatement statement = 
       statement.setString(1, Character.name);
@@ -46,6 +48,15 @@ class CharacterRepository implements CRUDRepository<Character> {
 
   return 1;
   }
+
+    public void cadastrar() {
+        String sql = "INSERT INTO sheetmain (name) VALUES (?) ";
+        PreparedStatement st=MyConnection.execute.conn
+
+        MyConnection.execute(sql);
+    }
+
+
 
   public ArrayList<Character> list(Character entity) {
     ArrayList<Character> entities = new ArrayList<>();

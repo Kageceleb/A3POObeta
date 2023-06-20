@@ -16,15 +16,14 @@ public class DBConnectionSingleton {
 
     private static Connection connection = null;
 
-    public static  Connection getConnection(){
-        if(connection != null) return connection;
-
-        try {
-
-            Class.forName( DRIVER );
-            Connection connection= DriverManager.getConnection(URL,USER,SENHA);
+    public static Connection getConnection() {
+        if (connection != null)
             return connection;
-        } catch(Exception e) {
+        try {
+            Class.forName(DRIVER);
+            Connection connection = DriverManager.getConnection(URL, USER, SENHA);
+            return connection;
+        } catch (Exception e) {
             System.out.println("Error connection to db");
             System.out.println(e);
         }
@@ -33,15 +32,22 @@ public class DBConnectionSingleton {
     static public ResultSet execute(String query) {
         try {
             Statement st = connection.createStatement();
-            return st.executeQuery( query );
+            return st.executeQuery(query);
         } catch (Exception e) {
             System.out.println("Error connection to db");
-            System.out.println(e);            
+            System.out.println(e);
         }
     }
 
-    static public void closeConnection(){
-        if(connection != null ) connection.close();
+    static public void closeConnection() {
+        if (connection != null)
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("Error connection to db");
+                System.out.println(e);
+            }
+
     }
 
 }
