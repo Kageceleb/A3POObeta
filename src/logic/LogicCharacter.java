@@ -10,6 +10,7 @@ import logic.Classes.*;
 
 public class LogicCharacter {
     
+    private int id;
     private String name;
     private String player;
     private int alignment;
@@ -36,6 +37,7 @@ public class LogicCharacter {
 
     //Getters de informações básicas
 
+    public int getId() { return id; }
     public String getName() {
         return name;
     }
