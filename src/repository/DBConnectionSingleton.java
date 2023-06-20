@@ -21,21 +21,25 @@ public class DBConnectionSingleton {
             return connection;
         try {
             Class.forName(DRIVER);
-            Connection connection = DriverManager.getConnection(URL, USER, SENHA);
+            connection = DriverManager.getConnection(URL, USER, SENHA);
             return connection;
         } catch (Exception e) {
             System.out.println("Error connection to db");
             System.out.println(e);
+            return null;
         }
     }
 
     static public ResultSet execute(String query) {
         try {
+
             Statement st = connection.createStatement();
-            return st.executeQuery(query);
+            ResultSet rs = st.executeQuery(query);
+            return rs;
         } catch (Exception e) {
             System.out.println("Error connection to db");
             System.out.println(e);
+            return null;
         }
     }
 

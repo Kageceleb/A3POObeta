@@ -6,10 +6,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
 
 public class CharacterRepository implements CRUDRepository<Character> {
+  Scanner sc = new Scanner(System.in);
+  Character newChar;
   String name, player;
   int alignment, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, background;
 
@@ -18,11 +21,16 @@ public class CharacterRepository implements CRUDRepository<Character> {
   // através do Override
   @Override
   public int create(Character entity) {
-     try{
-      Character newChar = new Character(name);
-      String sql = "INSERT INTO sheetmain (name, ) VALUES (?)";
-      PreparedStatement statement = 
-      statement.setString(1, Character.name);
+                
+    System.out.println("Qual o nome do personagem?");
+    int id = 55;
+    String name = sc.nextLine();
+       
+    try{
+      String sql = "INSERT INTO sheetmain (id,name) VALUES (?,?)";
+      PreparedStatement statement = DBConnectionSingleton.execute(sql);
+      statement.setInt(1, id);
+      statement.setString(2, name);
       // player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, aligment, backGround
       // statement.setString(2, newCharacter.player);
       // statement.setString(3, newCharacter.alignment);
@@ -36,6 +44,8 @@ public class CharacterRepository implements CRUDRepository<Character> {
       // statement.setString(11, newCharacter.race);
       // statement.setString(12, newCharacter.classy);
       // statement.setString(12, newCharacter.background);
+          newChar = new Character(id,name);
+
 
     ResultSet rs = statement.executeQuery();
             MyConnection.execute(sql);
