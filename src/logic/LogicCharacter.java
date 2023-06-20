@@ -4,13 +4,14 @@ import logic.Backgrounds.*;
 import logic.Interfaces.*;
 import logic.Races.*;
 
+import repository.*;
+
 import java.util.ArrayList;
 
 import logic.Classes.*;
 
-public class LogicCharacter {
+public class LogicCharacter extends Entity {
     
-    private int id;
     private String name;
     private String player;
     private int alignment;
