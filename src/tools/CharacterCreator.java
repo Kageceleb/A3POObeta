@@ -18,9 +18,10 @@ public class CharacterCreator{
 
         do {
             try {
-                
+                s.nextLine();
                 System.out.print("Nome do " + entity + ": ");
-                name = s.nextLine();
+                name = s.next();
+                
 
                 if (name.contains("'")) {
                     System.out.println("O nome do " + entity + " não pode conter ' (aspas simples). Escolha outro nome.");
