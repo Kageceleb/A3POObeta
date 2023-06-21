@@ -54,9 +54,6 @@ public class DBConnectionSingleton {
         }
     }
 
-
-
-
     static public void closeConnection() {
         if (connection != null)
             try {

@@ -1,14 +1,3 @@
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
-import gui.BackgroundSelectionPanel;
-import logic.LogicCharacter;
-import repository.CharacterRepository;
-import repository.DBConnectionSingleton;
 import tools.CharacterCreator;
 
 public class App {
@@ -25,6 +14,9 @@ public class App {
 
         CharacterCreator cc = new CharacterCreator();
         
+        System.out.println("Vamos escolher o seu antecedente");
+
+        cc.assignBG();
         
 
     }
