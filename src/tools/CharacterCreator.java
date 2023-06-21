@@ -18,6 +18,7 @@ public class CharacterCreator{
 
         do {
             try {
+                
                 System.out.print("Nome do " + entity + ": ");
                 name = s.nextLine();
 
@@ -233,6 +234,7 @@ public class CharacterCreator{
                 System.out.println("[1] Humano");
                 System.out.println("[2] Anão");
                 System.out.println("[3] Elfo");
+                System.out.println();
                 System.out.print("Escolha: ");
                 int inputValue = s.nextInt();
 
@@ -315,6 +317,7 @@ public class CharacterCreator{
                 System.out.println("[2] Ladino");
                 System.out.println("[3] Mago");
                 System.out.println("[4] Sacerdote");
+                System.out.println();
                 System.out.print("Escolha: ");
                 int inputValue = s.nextInt();
 
@@ -418,7 +421,8 @@ public class CharacterCreator{
             validInput = false;
             do {
                 try {
-                    System.out.println("Digite um valor para "+attributeNames[i]+": ");
+                    System.out.println("Digite um valor para " + attributeNames[i] + ": ");
+                    System.out.print("Valor: ");
                     int inputValue = s.nextInt();
 
                     if (attributeValues.contains(inputValue)) {
@@ -427,7 +431,7 @@ public class CharacterCreator{
                         validInput = true;
 
                     } else {
-                        System.out.println("Valor inválido para "+attributeNames[i]+". Os valores disponíveis são:");
+                        System.out.println("Valor inválido para " + attributeNames[i] + ". Os valores disponíveis são:");
                         System.out.println();
 
                         System.out.print("| ");
