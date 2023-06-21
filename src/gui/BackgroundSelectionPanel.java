@@ -15,8 +15,7 @@ import logic.Interfaces.Background;
 
 public class BackgroundSelectionPanel extends JPanel {
 
-    private Background[] backgrounds = { new Acolyte(), new Charlatan(), new Criminal(), new Entertainer(), new FolkHero(), new GuildArtisan(), new Hermit(), new Noble(), new Outlander(), new Sage(), new Sailor(), new Soldier(), new Urchin()
-    };
+    private Background[] backgrounds = { new Acolyte(), new Charlatan(), new Criminal(), new Entertainer(), new FolkHero(), new GuildArtisan(), new Hermit(), new Noble(), new Outlander(), new Sage(), new Sailor(), new Soldier(), new Urchin()};
     private int currentIndex = 0;
 
     private JLabel nameLabel;
