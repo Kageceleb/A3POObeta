@@ -7,20 +7,35 @@ import java.util.Scanner;
 public class CharacterCreator {
 
     Scanner s = new Scanner(System.in);
+    boolean validInput = false;
 
-    public String assignName() {
-        String name;
-        System.out.print("Nome do Personagem: ");
-        name = s.nextLine();
+    public String assignName(String entity) {
 
-        return name;
-    }
+        validInput = false;
+        String name = null;
 
-    public String assignPlayerName() {
-        String name;
-        System.out.print("Nome do Jogador: ");
-        name = s.nextLine();
+        do {
+            try {
+                System.out.print("Nome do " + entity + ": ");
+                name = s.nextLine();
 
+                if (name.contains("'")) {
+                    System.out.println("O nome do " + entity + " não pode conter ' (aspas simples). Escolha outro nome.");
+
+                } else if (name.length()>30) {
+                    System.out.println("Escolha um nome com no máximo 30 (trinta) caracteres.");
+
+                } else {
+                    validInput = true;
+                }
+                
+            } catch (Exception e) {
+                System.out.println("Ocorreu um erro nomeando o " + entity + "!");
+                
+            }
+            
+        } while (!validInput);
+        
         return name;
     }
 
@@ -53,8 +68,6 @@ public class CharacterCreator {
         attributeNames[5] = "Carisma";
         
         ArrayList<Integer> attributeValues = new ArrayList<>(Arrays.asList(15, 14, 13, 12, 10, 8));
-
-        boolean validInput = false;
 
         System.out.println("Valores disponíveis:");
         System.out.print("| ");
