@@ -6,15 +6,21 @@ import java.util.ArrayList;
 
 import logic.LogicCharacter;
 
-public class CharacterRepository implements CRUDRepository<LogicCharacter> {
+public class CharacterRepository extends CRUDRepository<LogicCharacter> {
 
   // Aqui se emplementa o Polimorfismo porque o CharacterRepository implementa a
   // Interface CRUDRepository, trazendo seus metodos (CRUD) e especificando-os
   // através do Override
+
+
+  public CharacterRepository (){
+    super("sheetmain");
+  }
+
   @Override
   public int create(LogicCharacter entity) {
     try {
-      String sql = "INSERT INTO sheetmain (name, player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, alignment, backGround) VALUES (?,?, ?,?,?, ?,?,?, ?,?,?, ?,?)";
+      String sql = "INSERT INTO "+this.getTableName()+" (name, player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, alignment, backGround) VALUES (?,?, ?,?,?, ?,?,?, ?,?,?, ?,?)";
       PreparedStatement statement = DBConnectionSingleton.getConnection().prepareStatement(sql);
       statement.setString(1, entity.getName());
       statement.setString(2, entity.getPlayer());
@@ -40,7 +46,7 @@ public class CharacterRepository implements CRUDRepository<LogicCharacter> {
   public ArrayList<LogicCharacter> list() {
     ArrayList<LogicCharacter> entities = new ArrayList<>();
 
-    String sql = "SELECT * FROM sheetmain ORDER by id";
+    String sql = "SELECT * FROM "+this.getTableName()+" ORDER by id";
     ResultSet rs = DBConnectionSingleton.read(sql);
     if (rs != null) {
       try {
@@ -72,21 +78,11 @@ public class CharacterRepository implements CRUDRepository<LogicCharacter> {
 
     return entities;
   }
-
-  @Override
-  public int delete(int id) {
-    String sql = "DELETE FROM sheetmain WHERE id = " + id;
-    DBConnectionSingleton.execute(sql);
-    System.out.println(id);
-    return 0;
-  }
-
-
   @Override
   public int update(int id, LogicCharacter entity) {
     
       try {
-            String sql = "UPDATE sheetmain SET name = ?, player = ?, strMain = ?, dexMain = ?, conMain = ?, intMain = ?, wisMain = ?, chaMain = ?, lvl = ?, race = ?, classy = ?, alignment = ?, backGround = ? WHERE id=" + id;
+            String sql = "UPDATE "+this.getTableName()+" SET name = ?, player = ?, strMain = ?, dexMain = ?, conMain = ?, intMain = ?, wisMain = ?, chaMain = ?, lvl = ?, race = ?, classy = ?, alignment = ?, backGround = ? WHERE id=" + id;
             PreparedStatement statement = DBConnectionSingleton.getConnection().prepareStatement(sql);
             statement.setString(1, entity.getName());
             statement.setString(2, entity.getPlayer());

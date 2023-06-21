@@ -76,7 +76,6 @@ public class MainMenu {
             
             Thread.sleep(1000);
             String name = cc.assignName("personagem");
-            s.nextLine(); //buffer maldito, cara
             Thread.sleep(1000);
             
             System.out.println("E por último o seu nome, criador de personagens. \n");
@@ -86,7 +85,7 @@ public class MainMenu {
 
             LogicCharacter newChar = new LogicCharacter(0, name, player, alignment, attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], 1, race, classy, bg);
             
-            //cr.create(newChar);
+            cr.create(newChar);
             
             System.out.println("Muito bem, " + player + ". " + name + " foi cadastrado com sucesso!");
 

@@ -4,7 +4,12 @@ package repository;
 public abstract class Entity {
   private int id;
 
-  Entity(int id) {
+  public Entity(int id) {
     this.id = id;
   }
+
+  public int getId(){
+    return this.id;
+  }
+
 }

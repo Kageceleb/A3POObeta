@@ -20,7 +20,7 @@ public class CharacterCreator{
             try {
                 s.nextLine();
                 System.out.print("Nome do " + entity + ": ");
-                name = s.next();
+                name= s.next();
                 
 
                 if (name.contains("'")) {
