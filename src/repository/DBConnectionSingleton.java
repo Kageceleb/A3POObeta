@@ -39,6 +39,23 @@ public class DBConnectionSingleton {
             System.out.println(e);
         }
     }
+   
+    static public ResultSet read(String query) {
+        try {
+            Class.forName(DRIVER);
+            connection = DriverManager.getConnection(URL, USER, SENHA);
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            return rs;
+        } catch (Exception e) {
+            System.out.println("Error connection to db");
+            System.out.println(e);
+            return null;
+        }
+    }
+
+
+
 
     static public void closeConnection() {
         if (connection != null)

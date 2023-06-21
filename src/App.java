@@ -14,46 +14,14 @@ import tools.CharacterCreator;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        CharacterRepository cr = new CharacterRepository();
 
-
-        /*Scanner sc = new Scanner(System.in);
-        int menu, id;
-        String name;
-        Character newChar;
-
-        // Criar um novo personagem
-        do {
-            System.out.println("1 - Cadastrar Personagem");
-            menu = sc.nextInt();
-            switch (menu) {
-                case 1:
-                CharacterRepository.create();
-                break;
-                case 3:
-                System.out.println("do nothing");;
-                break;
-            }
-
-        } while (menu != 7);*/
-
-        //CharacterCreator creator = new CharacterCreator();
-
-        //int[] attributes = new int[6];
-
-        //attributes = creator.assignAttributes();
-
-        // Character teste para visualizar ficha
         LogicCharacter testChar = new LogicCharacter(0,"Goliath", "Jonas", 4, 15, 14, 13, 12, 10, 8, 5, 2, 4, 7);
-
-        String sql = "INSERT INTO sheetmain (name) VALUES 'joão' ";
-
-        //System.out.println(testChar);
-
-        CharacterRepository porra = new CharacterRepository();
-
-        int yes = porra.create(testChar);
-
-        System.out.println(yes);
+        
+        for (LogicCharacter c : cr.list()) {
+            System.out.println(c.getId() + "  -  " + c.getName() + " Jogador: " + c.getPlayer());
+        }
+        //int b = cr.update(1, testChar);
 
         // SwingUtilities.invokeLater(new Runnable() {
         //     public void run() {
