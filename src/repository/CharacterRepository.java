@@ -1,7 +1,5 @@
 package repository;
 
-import repository.Character;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,67 +7,58 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.mysql.cj.x.protobuf.MysqlxPrepare.Execute;
+import logic.LogicCharacter;
 
-public class CharacterRepository implements CRUDRepository<Character> {
-  Scanner sc = new Scanner(System.in);
-  Character newChar;
-  String name, player;
-  int alignment, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, background;
+public class CharacterRepository implements CRUDRepository<LogicCharacter> {
+  
 
   // Aqui se emplementa o Polimorfismo porque o CharacterRepository implementa a
   // Interface CRUDRepository, trazendo seus metodos (CRUD) e especificando-os
   // através do Override
   @Override
-  public int create(Character entity) {
-    System.out.println("Qual o nome do personagem?");
-    String name = sc.nextLine();
-       
-    try{
-      String sql = "INSERT INTO sheetmain (id,name) VALUES (?)";
+  public int create(LogicCharacter entity) {
+    try {
+      String sql = "INSERT INTO sheetmain (name, player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, alignment, backGround) VALUES (?,?, ?,?,?, ?,?,?, ?,?,?, ?,?)";
       PreparedStatement statement = DBConnectionSingleton.getConnection().prepareStatement(sql);
-      statement.setString(1, name);
-      // player, strMain, dexMain, conMain, intMain, wisMain, chaMain, lvl, race, classy, aligment, backGround
-      // statement.setString(2, newCharacter.player);
-      // statement.setString(3, newCharacter.alignment);
-      // statement.setString(4, newCharacter.strMain);
-      // statement.setString(5, newCharacter.dexMain);
-      // statement.setString(6, newCharacter.conMain);
-      // statement.setString(7, newCharacter.intMain);
-      // statement.setString(8, newCharacter.wisMain);
-      // statement.setString(9, newCharacter.chaMain);
-      // statement.setString(10, newCharacter.lvl);
-      // statement.setString(11, newCharacter.race);
-      // statement.setString(12, newCharacter.classy);
-      // statement.setString(12, newCharacter.background);
+      statement.setString(1, entity.getName());
+      statement.setString(2, entity.getPlayer());
+      statement.setInt(3, entity.getStrMain());
+      statement.setInt(4, entity.getDexMain());
+      statement.setInt(5, entity.getConMain());
+      statement.setInt(6, entity.getIntMain());
+      statement.setInt(7, entity.getWisMain());
+      statement.setInt(8, entity.getChaMain());
+      statement.setInt(9, entity.getLevel());
+      statement.setInt(10, entity.getRaceNumber());
+      statement.setInt(11, entity.getClassNumber());
+      statement.setInt(12, entity.getAlignmentNumber());
+      statement.setInt(13, entity.getBGNumber());
 
+      statement.executeUpdate();
 
-    ResultSet rs = statement.executeQuery();
-            MyConnection.execute(sql);
+    } catch (Exception e) {
+      return 0;
+    }
 
-  }catch(
-  Exception e)
-  {
-    return 0;
+    return 1;
   }
 
-  return 1;
-  }
-
-   
-  public int delete(Character entity) {
+  @Override
+  public int delete(LogicCharacter entity) {
     return 0;
 
   }
 
-  public ArrayList<Character> list(Character entity) {
-    ArrayList<Character> entities = new ArrayList<>();
+  @Override
+  public ArrayList<LogicCharacter> list(LogicCharacter entity) {
+    ArrayList<LogicCharacter> entities = new ArrayList<>();
 
-        return entities;
+    return entities;
   }
 
-  public int update(Character entity) {
-        return 0;
+  @Override
+  public int update(LogicCharacter entity) {
+    return 0;
   }
 
 }

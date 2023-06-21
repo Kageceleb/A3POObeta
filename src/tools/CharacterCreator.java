@@ -8,14 +8,6 @@ public class CharacterCreator {
 
     Scanner s = new Scanner(System.in);
 
-    //Background
-    //Alinhamento
-    //Raca
-    //Classe
-    //Atributos
-    //Nome do Personagem
-    //Nome do Jogador
-
     public String assignName() {
         String name;
         System.out.print("Nome do Personagem: ");

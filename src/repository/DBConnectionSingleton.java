@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javax.swing.JOptionPane;
-
 public class DBConnectionSingleton {
 
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/charactersheet?zeroDateTimeBehavior=convertToNull";
@@ -30,16 +28,15 @@ public class DBConnectionSingleton {
         }
     }
 
-    static public ResultSet execute(String query) {
+    static public void execute(String query) {
         try {
-
+            Class.forName(DRIVER);
+            connection = DriverManager.getConnection(URL, USER, SENHA);
             Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            return rs;
+            st.executeUpdate(query);
         } catch (Exception e) {
             System.out.println("Error connection to db");
             System.out.println(e);
-            return null;
         }
     }
 

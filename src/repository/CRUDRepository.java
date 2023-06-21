@@ -1,7 +1,7 @@
 package repository;
 import java.util.ArrayList;
 
-abstract interface CRUDRepository<E extends Entity> {
+abstract interface CRUDRepository<E> {
   /**
    * Given an entity saves to the DB.
    * Return the id of the created entity or 0 if fails

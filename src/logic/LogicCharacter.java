@@ -4,13 +4,13 @@ import logic.Backgrounds.*;
 import logic.Interfaces.*;
 import logic.Races.*;
 
-import repository.*;
-
 import java.util.ArrayList;
 
 import logic.Classes.*;
 
-public class LogicCharacter extends Entity {
+public class LogicCharacter {
+    
+    private int id;
     
     private String name;
     private String player;
@@ -39,6 +39,7 @@ public class LogicCharacter extends Entity {
     //Getters de informações básicas
 
     public int getId() { return id; }
+
     public String getName() {
         return name;
     }
@@ -319,8 +320,10 @@ public class LogicCharacter extends Entity {
 
     //Construtor
 
-    public LogicCharacter(String name, String player, int alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
+    public LogicCharacter(int id, String name, String player, int alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){
         
+        this.id = id;
+
         this.name = name;
         this.player = player;
         this.level = level;
