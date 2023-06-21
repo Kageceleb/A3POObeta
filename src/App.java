@@ -14,9 +14,9 @@ public class App {
 
         CharacterCreator cc = new CharacterCreator();
         
-        System.out.println("Vamos escolher o seu antecedente");
+        System.out.println("Vamos escolher o seu alinhamento");
 
-        cc.assignBG();
+        cc.assignAlignment();
         
 
     }

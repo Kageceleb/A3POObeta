@@ -103,7 +103,112 @@ public class CharacterCreator{
     }
 
     public int assignAlignment() {
-        return 0;
+
+        int align = 0;
+        int hAlign;
+        int vAlign;
+
+        validInput = false;
+        do {
+            
+            try {
+                
+                System.out.println("---------------------------------------------------");
+                System.out.println("---------------- | Alinhamento | ------------------");
+                System.out.println("---------------------------------------------------");
+                
+                while (true) {
+                    System.out.println("     Quanto a visão social do seu personagem:");
+                    System.out.println("[1] Ele segue as regras ou leis");
+                    System.out.println("[2] Ele é indiferente quanto a isso");
+                    System.out.println("[3] Ele quebra as regras para conseguir o que quer");
+    
+                    hAlign = s.nextInt();
+    
+                    if (hAlign > 3 || hAlign < 1) {
+                        System.out.println();
+                        System.out.println("Aqui você ainda precisa respeitar as regras.");
+                        System.out.println();
+                    } else {
+                        break;
+                    }
+
+                }
+                
+                while(true) {
+                    System.out.println("      Quanto a visão moral do seu personagem:");
+                    System.out.println("[1] Ele é alguém bom e preza pelo bem alheio");
+                    System.out.println("[2] Ele é indiferente quanto a isso");
+                    System.out.println("[3] Ele é mau e não se importa com os outros");
+                    
+                    vAlign = s.nextInt();
+    
+                    if (vAlign > 3 || vAlign < 1) {
+                        System.out.println();
+                        System.out.println("Aqui você ainda precisa respeitar as regras.");
+                        System.out.println();
+                    } else {
+                        break;
+                    }
+
+                }
+
+                switch(Integer.toString(hAlign) + Integer.toString(vAlign)){
+                case "11":
+                    System.out.println("Seu alinhamento é Leal Bom");
+                    align = 1;
+                    validInput = true;
+                    break;
+                case "31":
+                    System.out.println("Seu alinhamento é Caótico Bom");
+                    align = 2;
+                    validInput = true;
+                    break;
+                case "21":
+                    System.out.println("Seu alinhamento é Neutro Bom");
+                    align = 3;
+                    validInput = true;
+                    break;
+                case "12":
+                    System.out.println("Seu alinhamento é Leal Neutro");
+                    align = 4;
+                    validInput = true;
+                    break;
+                case "22":
+                    System.out.println("Seu alinhamento é Neutro");
+                    align = 5;
+                    validInput = true;
+                    break;
+                case "32":
+                    System.out.println("Seu alinhamento é Caótico Neutro");
+                    align = 6;
+                    validInput = true;
+                    break;
+                case "13":
+                    System.out.println("Seu alinhamento é Leal Mau");
+                    align = 7;
+                    validInput = true;
+                    break;
+                case "33":
+                    System.out.println("Seu alinhamento é Caótico Mau");
+                    align = 8;
+                    validInput = true;
+                    break;
+                case "23":
+                    System.out.println("Seu alinhamento é Neutro Mau");
+                    align = 9;    
+                    validInput = true;
+                    break;
+                }
+
+            } catch (Exception e) {
+                System.out.println("Caractere inválido!");
+                s.nextLine();
+            }
+
+        } while(!validInput);
+
+        return align;
     }
 
     public int assignRace() {
