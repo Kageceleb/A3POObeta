@@ -118,11 +118,13 @@ public class CharacterCreator{
                 System.out.println("---------------------------------------------------");
                 
                 while (true) {
+                    System.out.println("---------------------------------------------------");
                     System.out.println("     Quanto a visão social do seu personagem:");
+                    System.out.println("---------------------------------------------------");
                     System.out.println("[1] Ele segue as regras ou leis");
                     System.out.println("[2] Ele é indiferente quanto a isso");
                     System.out.println("[3] Ele quebra as regras para conseguir o que quer");
-    
+                    System.out.print("Escolha: ");
                     hAlign = s.nextInt();
     
                     if (hAlign > 3 || hAlign < 1) {
@@ -136,11 +138,13 @@ public class CharacterCreator{
                 }
                 
                 while(true) {
+                    System.out.println("---------------------------------------------------");
                     System.out.println("      Quanto a visão moral do seu personagem:");
+                    System.out.println("---------------------------------------------------");
                     System.out.println("[1] Ele é alguém bom e preza pelo bem alheio");
                     System.out.println("[2] Ele é indiferente quanto a isso");
                     System.out.println("[3] Ele é mau e não se importa com os outros");
-                    
+                    System.out.print("Escolha: ");
                     vAlign = s.nextInt();
     
                     if (vAlign > 3 || vAlign < 1) {
@@ -152,6 +156,8 @@ public class CharacterCreator{
                     }
 
                 }
+
+                System.out.println("---------------------------------------------------");
 
                 switch(Integer.toString(hAlign) + Integer.toString(vAlign)){
                 case "11":
@@ -201,6 +207,8 @@ public class CharacterCreator{
                     break;
                 }
 
+                System.out.println("---------------------------------------------------");
+
             } catch (Exception e) {
                 System.out.println("Caractere inválido!");
                 s.nextLine();
@@ -212,11 +220,54 @@ public class CharacterCreator{
     }
 
     public int assignRace() {
-        return 0;
+
+        int race = 0;
+        
+        validInput = false;
+        do {
+            try {
+                System.out.println("---------------------------------------------------");
+                System.out.println("-------------- | As Raças do Jogo | ---------------");
+                System.out.println("---------------------------------------------------");              
+                System.out.println("Neste jogo seu personagem pode ser:");
+                System.out.println("[1] Humano");
+                System.out.println("[2] Anão");
+                System.out.println("[3] Elfo");
+                System.out.print("Escolha: ");
+                int inputValue = s.nextInt();
+
+
+            } catch (Exception e) {
+                System.out.println("Caractere inválido!");
+                s.nextLine();
+            }
+        } while(!validInput);
+
+
+        return race;
     }
 
     public int assignClass() {
-        return 0;
+
+        int classy = 0;
+
+        validInput = false;
+        do {
+            try {
+                System.out.println("---------------------------------------------------");
+                System.out.println("---------------- | As Classes | -------------------");
+                System.out.println("---------------------------------------------------");
+                
+
+
+            } catch (Exception e) {
+                System.out.println("Caractere inválido!");
+                s.nextLine();
+            }
+        } while(!validInput);
+
+
+        return classy;
     }
 
     public int[] assignAttributes() {
