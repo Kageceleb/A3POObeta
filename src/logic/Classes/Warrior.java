@@ -93,6 +93,7 @@ public class Warrior implements Classy {
         switch (level) {
             case 20:
                 classHP = classHP + 6;
+                classEquipment.add("Espada Lendária da Destruição");
                 this.classStr = this.classStr + 2;
             case 19:
                 classHP = classHP + 6;
@@ -106,13 +107,18 @@ public class Warrior implements Classy {
                 this.classStr = this.classStr + 2;
             case 15:
                 classHP = classHP + 6;
+                classEquipment.add("Martelo de Guerra Lendário");
             case 14:
                 classHP = classHP + 6;
+                classEquipment.add("Amuleto de Proteção Elemental");
                 this.classDex = this.classDex + 1;
             case 13:
                 classHP = classHP + 6;
+                classEquipment.add("Luvas do Ataque Poderoso");
             case 12:
                 classHP = classHP + 6;
+                classEquipment.add("Armadura de Placas");
+                this.classAC = 20;
                 this.classStr = this.classStr + 2;
             case 11:
                 classHP = classHP + 6;
@@ -123,19 +129,24 @@ public class Warrior implements Classy {
                 classHP = classHP + 6;
             case 8:
                 classHP = classHP + 6;
+                classEquipment.add("Espada Bastarda de Impacto");
                 this.classStr = this.classStr + 2;
             case 7:
                 classHP = classHP + 6;
             case 6:
                 classHP = classHP + 6;
+                classEquipment.add("Elmo de Resistência");
                 this.classCon = this.classCon+ 1;
             case 5:
                 classHP = classHP + 6;
+                classEquipment.remove("Escudo de Madeira");
+                classEquipment.add("Escudo de Aço");
             case 4:
                 classHP = classHP + 6;
                 this.classStr = this.classStr + 2;
             case 3:
                 classHP = classHP + 6;
+                classEquipment.add("Espada Longa");
             case 2:
                 classHP = classHP + 6;  
             case 1:

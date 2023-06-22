@@ -92,31 +92,37 @@ public class Thief implements Classy {
         switch (level) {
             case 20:
                 classHP = classHP + 5;
+                classEquipment.add("Manto da invisibilidade Permanente");
                 this.classDex = this.classDex + 1;
                 this.classInt = this.classInt + 1;
             case 19:
                 classHP = classHP + 5;
             case 18:
                 classHP = classHP + 5;
+                classEquipment.add("Amuleto de Disfarce Perfeito");
             case 17:
                 classHP = classHP + 5;
             case 16:
                 classHP = classHP + 5;
+                classEquipment.add("Adagas Sombrias");
                 this.classDex = this.classDex + 1;
                 this.classInt = this.classInt + 1;
             case 15:
                 classHP = classHP + 5;
+                classEquipment.add("Amuleto de Detecção de Armadilhas");
             case 14:
                 classHP = classHP + 5;
             case 13:
                 classHP = classHP + 5;
             case 12:
                 classHP = classHP + 5;
+                classEquipment.add("Anel de Esquiva Aprimorada");
                 this.classDex = this.classDex + 2;
             case 11:
                 classHP = classHP + 5;
             case 10:
-                classHP = classHP + 5;         
+                classHP = classHP + 5;
+                classEquipment.add("Capuz das Sombras");        
             case 9:
                 classHP = classHP + 5;
             case 8:
@@ -124,10 +130,13 @@ public class Thief implements Classy {
                 this.classDex = this.classDex + 2;
             case 7:
                 classHP = classHP + 5;
+                classEquipment.add("Adagas Envenenadas");
             case 6:
                 classHP = classHP + 5;
             case 5:
                 classHP = classHP + 5;
+                classEquipment.add("Botas de Agilidade");
+                classEquipment.add("Anel de Invisibilidade Temporária");
             case 4:
                 classHP = classHP + 5;
                 this.classDex = this.classDex + 2;

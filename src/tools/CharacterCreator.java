@@ -69,12 +69,12 @@ public class CharacterCreator{
                     System.out.println("O valor precisa ser um número dentro da lista abaixo");
                 } else {
                     System.out.println("---------------------------------------------------");
-                    System.out.println("----- |  " + bgs.get((inputValue-1)).getBGName() + "  | -----");
-                    System.out.println("Descrição");
+                    System.out.println("    " + bgs.get((inputValue-1)).getBGName() + "  | -----");
+                    System.out.println("                  - Descrição - ");
                     System.out.println(bgs.get((inputValue-1)).getBGDescription());
-                    System.out.println("Habilidades");
+                    System.out.println("                 - Habilidades - ");
                     System.out.println(bgs.get((inputValue-1)).getBGBonuses());
-                    System.out.println("Itens iniciais");
+                    System.out.println("                - Itens Iniciais - ");
                     System.out.println(bgs.get((inputValue-1)).getBGItems());
                     System.out.println("---------------------------------------------------");
 

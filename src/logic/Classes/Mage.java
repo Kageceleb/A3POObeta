@@ -88,15 +88,21 @@ public class Mage implements Classy {
         switch (level) {
             case 20:
                 classHP = classHP + 4;
+                classMagics.add("Tempestade do Caos");
+                classMagics.add("Desejo");
                 this.classInt = this.classInt + 2;
             case 19:
                 classHP = classHP + 4;
             case 18:
                 classHP = classHP + 4;
+                classMagics.add("Dominar Monstro");
+                classMagics.add("Terremoto");
             case 17:
                 classHP = classHP + 4;
             case 16:
                 classHP = classHP + 4;
+                classMagics.add("Teletransporte em Massa");
+                classMagics.add("Reversão do Tempo");
                 this.classInt = this.classInt + 2;
             case 15:
                 classHP = classHP + 4;
@@ -104,38 +110,53 @@ public class Mage implements Classy {
                 classHP = classHP + 4;
             case 13:
                 classHP = classHP + 4;
+                classMagics.add("Desintegrar");
+                classMagics.add("Projétil Prismático");
             case 12:
                 classHP = classHP + 4;
                 this.classInt = this.classInt + 2;
+                classMagics.add("Cadeia de Relâmpagos");
             case 11:
                 classHP = classHP + 4;
+                classMagics.add("Porta Dimensional");
             case 10:
                 classHP = classHP + 4;
+                classMagics.add("Cone de Frio");
             case 9:
                 classHP = classHP + 4;
+                classMagics.add("Dominar Pessoa");
+                classMagics.add("Teletransporte");
             case 8:
                 classHP = classHP + 4;
+                classMagics.add("Muralha de Fogo");
                 this.classInt = this.classInt + 2;
             case 7:
                 classHP = classHP + 4;
+                classMagics.add("Evocar Elemental");
+                classMagics.add("Controlar Elementais");
             case 6:
                 classHP = classHP + 4;
+                classMagics.add("Relâmpago");
             case 5:
                 classHP = classHP + 4;
                 classMagics.add("Bola de Fogo");
                 classMagics.add("Invisibilidade");
             case 4:
                 classHP = classHP + 4;
+                classMagics.add("Levitação");
                 this.classInt = this.classInt + 2;
             case 3:
                 classHP = classHP + 4;
                 classMagics.add("Armadura Arcana");
+                classMagics.add("Sono");
             case 2:
+                classMagics.add("Mísseis Mágicos");
                 classHP = classHP + 4;
             case 1:
                 classMagics.add("Mãos Mágicas");
                 classMagics.add("Raio de Gelo");
                 classMagics.add("Ilusão Menor");
+                
         }
     }
     

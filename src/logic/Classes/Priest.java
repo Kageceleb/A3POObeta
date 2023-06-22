@@ -88,51 +88,94 @@ public class Priest implements Classy {
         switch (level) {
             case 20:
                 classHP = classHP + 5;
+                classMagics.add("Palavra de Poder: Matar");
                 this.classWis = this.classWis + 2;
             case 19:
                 classHP = classHP + 5;
+                classMagics.add("Convocar Celestial");
+                classMagics.add("Manto de Invulnerabilidade");
             case 18:
                 classHP = classHP + 5;
+                classMagics.add("Terremoto");
             case 17:
                 classHP = classHP + 5;
             case 16:
                 classHP = classHP + 5;
+                classMagics.add("Regeneração");
+                classMagics.add("Destruição Suprema");
                 this.classWis = this.classWis + 2;
             case 15:
                 classHP = classHP + 5;
             case 14:
                 classHP = classHP + 5;
+                classMagics.add("Retirar Maldição");
             case 13:
                 classHP = classHP + 5;
             case 12:
                 classHP = classHP + 5;
+                classMagics.add("Visão no Escuro");
                 this.classWis = this.classWis + 2;
             case 11:
                 classHP = classHP + 5;
             case 10:
                 classHP = classHP + 5;
+                classMagics.add("Cura Completa");
             case 9:
                 classHP = classHP + 5;
             case 8:
                 classHP = classHP + 5;
+                classMagics.add("Restauração Maior");
+                classMagics.add("Neutralizar Veneno");
                 this.classWis = this.classWis + 2;
             case 7:
                 classHP = classHP + 5;
+                classMagics.add("Convocar Elemental");
             case 6:
                 classHP = classHP + 5;
             case 5:
                 classHP = classHP + 5; 
             case 4:
                 classHP = classHP + 5;
+                classMagics.add("Cegueira/Surdez");
+                classMagics.add("Proteção contra Energias");
                 this.classWis = this.classWis + 2;
             case 3:
                 classHP = classHP + 5;
                 classMagics.add("Cura Maior");
             case 2:
                 classHP = classHP + 5;
+                classMagics.add("Bênção");
             case 1:
-                classMagics.add("Cura Menor");
+                classMagics.add("Curar Ferimentos");
                 classMagics.add("Afastar Mortos-Vivos");
+
+
+
+
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+
+
+
+
+
         }
 
     }
