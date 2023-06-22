@@ -315,6 +315,12 @@ public class LogicCharacter extends Entity {
         return BGNumber;
     }
 
+    // Setters
+
+    public void setLevel(int nextLevel) {
+        this.level = nextLevel;
+    }
+
     //Construtor
 
     public LogicCharacter(int id, String name, String player, int alignment, int strMain, int dexMain, int conMain, int intMain, int wisMain, int chaMain, int level, int race, int classy, int background){

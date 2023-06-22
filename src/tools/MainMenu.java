@@ -330,7 +330,23 @@ public class MainMenu {
                 System.out.println("Chegou ao limite da sua jornada. Já é um lenda!");
             } else {
                 System.out.println("Será promovido ao nível " + nextLevel);
+                System.out.println("       Está certo disso?");
+                System.out.println("      [1] Sim     [2] Não");
+                System.out.println();
+                System.out.print("Escolha: ");
+                int option = s.nextInt();
 
+                if (option != 1 && option != 2) {
+                    System.out.println("Opção inválida! De volta ao menu inicial.");
+
+                } else if (option == 1) {
+                    entity.setLevel(nextLevel);
+                    cr.update(entity.getId(), entity);
+                    System.out.println(entity.getName() + " subiu para o nível " + nextLevel + "!");
+                    
+                } else {
+                    System.out.println("Existe o momento certo para tudo.");
+                }
             }
 
 
