@@ -27,17 +27,17 @@ public class Soldier implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Guerra está em sua vida desde quando você consegue \nse lembrar. Você treinou de jovem em como usar armas \ne armaduras, aprendendo as perícias básicas da \nsobrevivência, incluindo como ficar vivo no campo de \nbatalha, seja como soldado, mercenário ou guarda.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Insignia de Patente \nFetiche de um inimigo \nConjuto de dados de osso \nRoupas Comuns \n10 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Atletismo \nIntimidação";
     }
 
     @Override

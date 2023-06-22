@@ -27,17 +27,17 @@ public class Sailor implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você navegou por anos. Nesse tempo você encarou \ntempestades poderosas e monstros tentando afundar \nseu navio. Você ama a linha distante do horizonte, \nmas chegou a hora de tentar algo novo.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Clava \n15m Corda de Seda \nAmuleto da sorte \nTrajes Comuns \n10 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Atletismo \nPercepção";
     }
 
     @Override

@@ -27,17 +27,17 @@ public class Charlatan implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você sempre teve um jeito com pessoas. Você sabe o \nque os faz funcionar, e com um pouco de cuidado pode \nos ler como um livro. Você sabe o que as pessoas \nquerem e dá isso a elas, ou ao menos promete.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Roupas Finas \nKit de Disfarce \nFerramentas de Trapaça \nGarrafas de Líquidos Coloridos \n15 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Enganação \nPrestidigitação";
     }
 
     @Override

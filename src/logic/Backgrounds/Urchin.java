@@ -28,17 +28,17 @@ public class Urchin implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você cresceu nas ruas sozinho. Você não tinha \nninguém para cuidar de você e teve que aprender a se \nvirar. Contra todas as apostas você sobreviveu, e o \nfez através de esperteza e força.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Faca Pequena \nMapa da Cidade \nRato de estimação \nRecordação dos pais \nRoupas Comuns \n10 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Furtividade \nPrestidigitação";
     }
 
     @Override

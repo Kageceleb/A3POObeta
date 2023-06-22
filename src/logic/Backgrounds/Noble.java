@@ -26,17 +26,17 @@ public class Noble implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você entende poder, riqueza e privilégio. \nVocê possui um título nobre e sua família é dona de \nterras, coleta impostos e tem influência política.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Trajes Finos \nAnel de Sinete \nPergaminho de Linhagem \n25 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "História \nPersuasão";
     }
 
     @Override

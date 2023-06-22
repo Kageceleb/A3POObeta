@@ -27,17 +27,17 @@ public class Hermit implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você viveu afastado, seja numa comunidade fechada \ncomo um monastério ou totalmente sozinho. Em seu \ntempo afastado da sociedade você encontrou solidão \nquieta e talvez as respostas que procurava.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Estojo de Pergaminhos \nCobertor de Inverno \nRoupas Comuns \nKit de Herbalismo \n5 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Medicina \nReligião";
     }
 
     @Override

@@ -27,18 +27,17 @@ public class Entertainer implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste sumermega descricao a descricao das descricoes bem descrita e descrituda";
+        return "Você é seu melhor na frente de um público. Você sabe \ncomo prendê-los, entretê-los, e mesmo inspirá-los. \nSua música pode instigar corações, sua dança capturar \nmentes. Seja qual for a técnica, sua arte é sua vida.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste \n "
-        +"Item 2 \n Item 3 \n Tem 4";
+        return "Instrumento Musical \nKit de Disfarce \nPresente de um admirador \nTraje \n15 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste lalalalal lala alalala lalala lal lalalala";
+        return "Acrobacia \nAtuação";
     }
 
     @Override

@@ -27,17 +27,17 @@ public class FolkHero implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você vem de uma posição social humilde, mas seu \ndestino é algo muito maior. O povo de onde veio pode \nlhe ver como um campeão, e é seu destino enfrentar \nos monstros e tiranos que ameaçam o povo comum.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Ferramentas de Artesão \nPá \nPote de Ferro \nRoupas Comuns \n10 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Lidar com Animais \nSobrevivência";
     }
 
     @Override

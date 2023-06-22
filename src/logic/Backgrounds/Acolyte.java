@@ -23,17 +23,17 @@ public class Acolyte implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você passou sua vida em serviço de um templo. \nVocê age como um intermediário entre o reino do \nsagrado e do mundo mortal, fazendo ritos sagrados e \noferecendo sacrifícios para guiar os fieis à presença \ndo divino.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Símbolo Sagrado \nLivro de Preces \nVareta de Incenso x5 \nRoupas Comuns \n15 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Intuição \nReligião";
     }
 
     @Override

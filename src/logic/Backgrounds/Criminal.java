@@ -26,17 +26,17 @@ public class Criminal implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você é um criminoso experiente, com uma história em \nquebrar a lei. Você é muito mais próximo do que a \nmaioria das pessoas do mundo de assassinato, roubo e \nviolência, e sobreviveu até esse ponto ao ignorar as \nregras e regulamentos da sociedade.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Ferramentas de Ladrão \nPé de Cabra \nRoupas Escuras Comuns \n15 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Enganação \nFurtividade";
     }
 
     @Override

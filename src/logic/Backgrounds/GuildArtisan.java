@@ -26,17 +26,17 @@ public class GuildArtisan implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você é membro de uma guilda de artesãos, hábeis em \num campo particular e associado a outros. Você \naprendeu suas perícias como o aprendiz de um mestre \nou junto de uma guilda, até se tornar um mestre você \ntambém.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Ferramentas de Artesão \nCarta de Apresentação da Guilda \nRoupas de Viajante \n15 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Intuição \nPersuasão";
     }
 
     @Override

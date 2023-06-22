@@ -27,17 +27,17 @@ public class Outlander implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você cresceu no ermo, longe da civilização e os \nconfortos das cidades e tecnologia.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Bordão \nArmadilha de Caça \nFetiche Animal \nRoupas de Viajante \n10 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "Atletismo \nSobrevivência";
     }
 
     @Override

@@ -28,17 +28,17 @@ public class Sage implements Background {
 
     @Override
     public String getBGDescription() {
-        return "Descrição teste";
+        return "Você passou anos aprendendo sobre o multiverso. \nVocê fuçou escritos, estudou pergaminhos e ouviu os \ngrandes especialistas no assunto que lhe interessa.";
     }
 
     @Override
     public String getBGItems() {
-        return "Itens teste";
+        return "Vidro de Tinta Escura \nPena \nFaca Pequena \nCarta de um falecido colega \nRoupas Comuns \n10 po";
     }
 
     @Override
     public String getBGBonuses() {
-        return "Bonus teste";
+        return "História \nArcanismo";
     }
 
     @Override
