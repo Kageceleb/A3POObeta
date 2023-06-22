@@ -118,9 +118,19 @@ public class MainMenu {
                 System.out.println("Digite o Id de um Personagem para alterá-lo");
                 System.out.print("Id: ");
                 int id = s.nextInt();
-    
-                // Fazer validação de dados!!!!!!
-                while (true) {
+
+                boolean validId = false;
+                for (LogicCharacter character : cr.list()) {
+                    if (character.getId() == id) {
+                        validId = true;
+                    }
+                }
+
+                if (!validId) {
+                    System.out.println("Não há personagens com este Id.");
+                }
+                
+                while (validId) {
                     System.out.println("Qual o destino de " + cr.list().get(id).getName() + "?");
                     System.out.println("[1] Visualizar Ficha");
                     System.out.println("[2] Editar Dados");
@@ -135,10 +145,12 @@ public class MainMenu {
                         System.out.println("Opção inválida! Escolha uma opção do menu.");
     
                     } else if (option == 0) {
-                        break;
+                        validId = false;
     
                     } else if (option == 1) {
                         this.showCharacter(cr.list().get(id));
+                        System.out.print("Pressione Enter para continuar ");
+                        s.nextLine();
     
                     } else if (option == 2) {
                         this.editCharacter(cr.list().get(id));
@@ -148,7 +160,7 @@ public class MainMenu {
     
                     } else if (option == 4) {
                         this.deleteCharacter(cr.list().get(id));
-                        break;
+                        validId = false;
     
                     }
                 }
@@ -163,30 +175,177 @@ public class MainMenu {
 
     public void showCharacter(LogicCharacter entity) {
         System.out.println(entity);
-        System.out.print("Pressione Enter para continuar ");
-        s.nextLine();
+        
     }
 
     public void deleteCharacter(LogicCharacter entity) {
         int charId = entity.getId();
+        try {
+            System.out.println(entity.getName() + " será destruído e todo seu legado esquecido.");
+            System.out.println("Tem certeza que deseja baní-lo para o oblívio?");
+            System.out.println("             [1] Sim     [2] Não");
+            System.out.println();
+            System.out.print("Escolha: ");
+            int option = s.nextInt();
 
+            if (option != 1 && option != 2) {
+                System.out.println("Seu erro salvou a vida de " + entity.getName());
+            } else if (option == 1) {
+                System.out.println("Sua família e amigos sentirão sua falta.");
+                System.out.println("As rolagens de iniciativa não serão as mesmas.");
+                System.out.println("Tem certeza da sua decisão? ... monstro");
+                System.out.println("             [1] Sim     [2] Não");
+                System.out.println();
+                System.out.print("Escolha: ");
+                option = s.nextInt();
+
+                if (option != 1 && option != 2) {
+                    System.out.println("Seu erro salvou a vida de " + entity.getName());
+
+                } else if (option == 1) {
+                    System.out.println("Que assim seja...");
+                    cr.delete(charId);
+
+                } else {
+                    System.out.println(entity.getName() + "não esquecerá sua misericórdia.");
+                }
+
+            } else {
+                System.out.println(entity.getName() + " viverá mais um dia.");
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Mometo triste...");
+            System.out.println("Despedida de um personagem...");
+            System.out.println("E você brincando no terminal...");
+            s.nextLine();
+        } 
     }
 
     public void editCharacter(LogicCharacter entity) {
+        
+        try {
+            int id = entity.getId();
+            String name = entity.getName();
+            String player = entity.getPlayer();
+            int alignment = entity.getAlignmentNumber();
+            int[] attributes = new int[6];
+            attributes[0] = entity.getStrMain();
+            attributes[1] = entity.getDexMain();
+            attributes[2] = entity.getConMain();
+            attributes[3] = entity.getIntMain();
+            attributes[4] = entity.getWisMain();
+            attributes[5] = entity.getChaMain();
+            int level = entity.getLevel();
+            int race = entity.getRaceNumber();
+            int classy = entity.getClassNumber();
+            int bg = entity.getBGNumber();
+            
+            boolean validated = false;
 
+            while(!validated) {
+                System.out.println("---------------------------------------------------");
+                System.out.println("----------- | Edição de Personagem | --------------");
+                System.out.println("---------------------------------------------------");
+                System.out.println();
+                System.out.println("O que será alterado em " + name + "?");
+                System.out.println("[1] Nome");
+                System.out.println("[2] Jogador");
+                System.out.println("[3] Alinhamento");
+                System.out.println("[4] Atributos");
+                System.out.println("[5] Raça");
+                System.out.println("[6] Classe");
+                System.out.println("[7] Background");
+                System.out.println();
+                System.out.println("[9] Salvar");
+                System.out.println("[0] Cancelar");
+                System.out.println();
+                System.out.print("Escolha: ");
+                int option = s.nextInt();
+    
+                if (option < 0 || option > 7) {
+                    System.out.println("Escolha um número do menu.");
+                } else if (option == 0) {
+                    System.out.println("De volta do menu!");
+                    break;
+                } else {
+                    
+                    switch (option) {
+                        case 1:
+                            name = cc.assignName("personagem");
+                        break;
+                        case 2:
+                            player = cc.assignName("jogador");
+                        break;
+                        case 3:
+                            alignment = cc.assignAlignment();
+                        break;
+                        case 4:
+                            attributes = cc.assignAttributes();
+                        break;
+                        case 5:
+                            race = cc.assignRace();
+                        break;
+                        case 6:
+                            classy = cc.assignClass();
+                        break;
+                        case 7:
+                            bg = cc.assignBG();
+                        break;
+                        case 9:
+                            validated = true;
+                        break;
+                    }
+                }
+
+            }
+            
+            if (validated) {
+                LogicCharacter editChar = new LogicCharacter(id, name, player, alignment, attributes[0], attributes[1], attributes[2], attributes[3], attributes[4], attributes[5], level, race, classy, bg);
+        
+                cr.update(id, editChar);
+
+                System.out.println("Tudo salvo! " + name + "é um " + editChar.getRace().getRaceName() + " novo em folha!");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro ao editar seu Personagem.");
+            System.out.println("Cuidado com os caracteres que você digita no terminal!");
+            s.nextLine();
+        }
     }
 
     public void levelUp(LogicCharacter entity) {
+        int nextLevel = entity.getLevel()+1;
 
+        try {
+            System.out.println("---------------------------------------------------");
+            System.out.println("---------------- | Level Up! | --------------------");
+            System.out.println("---------------------------------------------------");
+            System.out.println();
+            System.out.println(entity.getName());
+            System.out.println("Um " + entity.getClassy().getClassName() + " nível " + entity.getLevel()); 
+
+            if (nextLevel > 20) {
+                System.out.println("Chegou ao limite da sua jornada. Já é um lenda!");
+            } else {
+                System.out.println("Será promovido ao nível " + nextLevel);
+
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro no level up do seu Personagem.");
+            System.out.println("Cuidado com os caracteres que você digita no terminal!");
+            s.nextLine();
+        }
     }
 
     public MainMenu() {
         shutdown = false;
 
-        do {
-            
-            try {
-    
+        do {          
+            try {    
                 System.out.println("---------------------------------------------------");
                 System.out.println("------------ | Debugs & Databases | ---------------");
                 System.out.println("---------------------------------------------------");
@@ -223,7 +382,6 @@ public class MainMenu {
                 System.out.println("Caractere inválido!");
                 s.nextLine();
             }
-        } while (!shutdown);
-        
+        } while (!shutdown);       
     }
 }
