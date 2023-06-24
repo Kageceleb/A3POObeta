@@ -98,7 +98,6 @@ public class MainMenu {
     }
 
     public void listAllCharacters() {
-        
         try {
             System.out.println("---------------------------------------------------");
             System.out.println("----------- | Lista de personagens | --------------");
@@ -118,11 +117,13 @@ public class MainMenu {
                 System.out.println("Digite o Id de um Personagem para alterá-lo");
                 System.out.print("Id: ");
                 int id = s.nextInt();
+                LogicCharacter validChar= new LogicCharacter(0, null, null, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1);
 
                 boolean validId = false;
                 for (LogicCharacter character : cr.list()) {
                     if (character.getId() == id) {
                         validId = true;
+                        validChar=character;
                     }
                 }
 
@@ -131,7 +132,7 @@ public class MainMenu {
                 }
                 
                 while (validId) {
-                    System.out.println("Qual o destino de " + cr.list().get(id).getName() + "?");
+                    System.out.println("Qual o destino de " + validChar.getName() + "?");
                     System.out.println("[1] Visualizar Ficha");
                     System.out.println("[2] Editar Dados");
                     System.out.println("[3] Subir de Nível");
@@ -148,18 +149,18 @@ public class MainMenu {
                         validId = false;
     
                     } else if (option == 1) {
-                        this.showCharacter(cr.list().get(id));
+                        this.showCharacter(validChar);
                         System.out.print("Pressione Enter para continuar ");
                         s.nextLine();
     
                     } else if (option == 2) {
-                        this.editCharacter(cr.list().get(id));
+                        this.editCharacter(validChar);
     
                     } else if (option == 3) {
-                        this.levelUp(cr.list().get(id));
+                        this.levelUp(validChar);
     
                     } else if (option == 4) {
-                        this.deleteCharacter(cr.list().get(id));
+                        this.deleteCharacter(validChar);
                         validId = false;
     
                     }
@@ -167,7 +168,7 @@ public class MainMenu {
             }
 
         } catch (Exception e) {
-            System.out.println("Ocorreu um erro na alteração do personagem");
+            System.out.println("Ocorreu um erro na alteração do personagem"+e);
             System.out.println("Cuidado com os caracteres que você digita no terminal!");
             s.nextLine();
         }         
@@ -263,7 +264,7 @@ public class MainMenu {
                 System.out.print("Escolha: ");
                 int option = s.nextInt();
     
-                if (option < 0 || option > 7) {
+                if (option < 0 || option > 9) {
                     System.out.println("Escolha um número do menu.");
                 } else if (option == 0) {
                     System.out.println("De volta do menu!");
@@ -305,7 +306,7 @@ public class MainMenu {
         
                 cr.update(id, editChar);
 
-                System.out.println("Tudo salvo! " + name + "é um " + editChar.getRace().getRaceName() + " novo em folha!");
+                System.out.println("Tudo salvo! " + name + " é um " + editChar.getRace().getRaceName() + " novo em folha!");
             }
 
         } catch (Exception e) {
@@ -391,11 +392,10 @@ public class MainMenu {
 
                 } else if (option == 2) {
                     this.listAllCharacters();
-
                 }
     
             } catch (Exception e) {
-                System.out.println("Caractere inválido!");
+                System.out.println("Caractere inválido!"+e);
                 s.nextLine();
             }
         } while (!shutdown);       
