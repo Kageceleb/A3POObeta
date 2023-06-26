@@ -362,7 +362,7 @@ public class CharacterCreator{
                         System.out.println("                  - Equipamentos - ");
                         System.out.println("Sacerdotes usam Armadura Média, possuem magias de cura, \nmagias ofensivas e podem atacar coma maças.");
                         System.out.println();
-
+                        
                     }
                     
                     
