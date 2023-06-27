@@ -3,15 +3,16 @@ package gui;
 import javax.swing.*;
 
 import gui.Creation.CreationWindow;
+import gui.List.ListWindow;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 
 public class MainWindow extends JFrame {
+
+    private JDialog activeDialog = null;
 
     public MainWindow() {
         initializeWindow();
@@ -46,11 +47,11 @@ public class MainWindow extends JFrame {
     }
 
     private void createButtons() {
-        MedievalButton button1 = new MedievalButton("Criar Novo Personagem");
-        MedievalButton button2 = new MedievalButton("Listar Personagens");
-        MedievalButton button3 = new MedievalButton("Sair");
+        MedievalButton btNewChar = new MedievalButton("Criar Novo Personagem");
+        MedievalButton btCharList = new MedievalButton("Listar Personagens");
+        MedievalButton btExit = new MedievalButton("Sair");
 
-        int buttonWidth = button1.getPreferredSize().width + 40; // Tamanho
+        int buttonWidth = btNewChar.getPreferredSize().width + 40; // Tamanho
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setOpaque(false);
@@ -61,42 +62,43 @@ public class MainWindow extends JFrame {
         gbc.gridy = 0;
         gbc.insets = new Insets(10, 10, 10, 10); // Padding dos botões
 
-        button1.setPreferredSize(new Dimension(buttonWidth, button1.getPreferredSize().height));
-        button2.setPreferredSize(new Dimension(buttonWidth, button2.getPreferredSize().height));
-        button3.setPreferredSize(new Dimension(buttonWidth, button3.getPreferredSize().height));
+        btNewChar.setPreferredSize(new Dimension(buttonWidth, btNewChar.getPreferredSize().height));
+        btCharList.setPreferredSize(new Dimension(buttonWidth, btCharList.getPreferredSize().height));
+        btExit.setPreferredSize(new Dimension(buttonWidth, btExit.getPreferredSize().height));
 
-        buttonPanel.add(button1, gbc);
+        buttonPanel.add(btNewChar, gbc);
 
         gbc.gridy++;
-        buttonPanel.add(button2, gbc);
+        buttonPanel.add(btCharList, gbc);
 
         gbc.gridy++;
         gbc.insets = new Insets(50, 10, 10, 10);
         gbc.anchor = GridBagConstraints.PAGE_END;
-        buttonPanel.add(button3, gbc);
+        buttonPanel.add(btExit, gbc);
 
         JLayeredPane layeredPane = (JLayeredPane) getContentPane();
         layeredPane.setLayout(new BorderLayout());
-        layeredPane.add(buttonPanel, BorderLayout.CENTER);
+        layeredPane.add(buttonPanel, BorderLayout.CENTER);        
 
-        button1.addActionListener(new ActionListener() {
+        btNewChar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                manageActiveDialog();
                 CreationWindow creationWindow = new CreationWindow();
-                creationWindow.addWindowListener(new WindowAdapter() {
-                    public void windowClosed(WindowEvent e) {
-                        
-                    }
-                });
+                activeDialog = creationWindow;
+                              
             }
         });
 
-        button2.addActionListener(new ActionListener() {
+        btCharList.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                manageActiveDialog();
+                ListWindow listWindow = new ListWindow();
+                activeDialog = listWindow;
                 
             }
         });
 
-        button3.addActionListener(new ActionListener() {
+        btExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
@@ -104,5 +106,11 @@ public class MainWindow extends JFrame {
 
         pack();
         setLocationRelativeTo(null);
+    }
+
+    public void manageActiveDialog() {
+        if (activeDialog != null) {
+            activeDialog.dispose();
+        }
     }
 }
