@@ -35,10 +35,10 @@ public class ListWindow extends JDialog {
         setResizable(false);
 
         DefaultTableModel model = new DefaultTableModel();
-        model.setColumnIdentifiers(new String[] {"Nome", "Raça", "Classe", "Nível","Jogador"});
+        model.setColumnIdentifiers(new String[] {"ID", "Nome", "Raça", "Classe", "Nível","Jogador"});
 
         for (LogicCharacter character : cr.list()) {
-            Object[] rowData = {character.getName(), character.getRace().getRaceName(), character.getClassy().getClassName(), character.getLevel(), character.getPlayer()};
+            Object[] rowData = {character.getId(), character.getName(), character.getRace().getRaceName(), character.getClassy().getClassName(), character.getLevel(), character.getPlayer()};
             model.addRow(rowData);
         }
 
@@ -50,8 +50,20 @@ public class ListWindow extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int selectedRow = characterTable.getSelectedRow();
-                new ViewSheet("Ernesto"); //teste
+                
                 if (selectedRow != -1) {
+                    Object selectedValue = characterTable.getValueAt(selectedRow, 0);
+
+                    if (selectedValue instanceof Number) {
+                        int characterId = ((Number) selectedValue).intValue();
+
+                        for (LogicCharacter character : cr.list()) {
+                            if (character.getId() == characterId) {
+                                new ViewSheet(character);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         });

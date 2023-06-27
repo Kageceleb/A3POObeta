@@ -1,12 +1,16 @@
 
 import gui.MainWindow;
-//import tools.MainMenu;
+import tools.MainMenu;
 
 public class App {
     public static void main(String[] args) throws Exception {
       
-        //new MainMenu();
+        
+        // App no console
+        // new MainMenu();
 
+
+        // App no Swing
         MainWindow mainWindow = new MainWindow();
         mainWindow.setVisible(true);
 
