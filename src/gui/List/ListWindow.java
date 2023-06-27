@@ -1,16 +1,21 @@
 package gui.List;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import gui.MedievalButton;
+import logic.LogicCharacter;
+import repository.CharacterRepository;
 
 public class ListWindow extends JDialog {
 
-    JPanel contentBoxPanel = new JPanel();
+    CharacterRepository cr = new CharacterRepository();
+
+    JTable characterTable;
 
     MedievalButton btView;
     MedievalButton btEdit;
@@ -18,8 +23,6 @@ public class ListWindow extends JDialog {
     MedievalButton btDel;
     MedievalButton btExit;
 
-    
-    
     public ListWindow() {   
         setTitle("Lista de Personagens");    
         initializeWindow();
@@ -31,11 +34,25 @@ public class ListWindow extends JDialog {
         setSize(700, 500);
         setResizable(false);
 
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(new String[] {"Nome", "Raça", "Classe", "Nível","Jogador"});
+
+        for (LogicCharacter character : cr.list()) {
+            Object[] rowData = {character.getName(), character.getRace().getRaceName(), character.getClassy().getClassName(), character.getLevel(), character.getPlayer()};
+            model.addRow(rowData);
+        }
+
+        characterTable = new JTable(model);
+        JScrollPane scrollPane = new JScrollPane(characterTable);
+
         btView = new MedievalButton("Visualizar");
         btView.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                int selectedRow = characterTable.getSelectedRow();
+                new ViewSheet("Ernesto"); //teste
+                if (selectedRow != -1) {
+                }
             }
         });
         
@@ -43,7 +60,11 @@ public class ListWindow extends JDialog {
         btEdit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                int selectedRow = characterTable.getSelectedRow();
+                if (selectedRow != -1) {
+
+                    refreshTable();
+                }
             }
         });
 
@@ -51,7 +72,11 @@ public class ListWindow extends JDialog {
         btLvlUp.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                int selectedRow = characterTable.getSelectedRow();
+                if (selectedRow != -1) {
+
+                    refreshTable();
+                }
             }
         });
 
@@ -59,7 +84,11 @@ public class ListWindow extends JDialog {
         btDel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                int selectedRow = characterTable.getSelectedRow();
+                if (selectedRow != -1) {
+
+                    refreshTable();
+                }
             }
         });
 
@@ -85,7 +114,21 @@ public class ListWindow extends JDialog {
         buttonPanel.add(btExit);
         
         getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(contentBoxPanel, BorderLayout.CENTER);
+        getContentPane().add(scrollPane, BorderLayout.CENTER);
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+    }
+
+    public void updateTable(DefaultTableModel model) {
+        model.setRowCount(0);
+
+        for (LogicCharacter character : cr.list()) {
+            Object[] rowData = {character.getName(), character.getRace().getRaceName(), character.getClassy().getClassName(), character.getLevel(), character.getPlayer()};
+            model.addRow(rowData);
+        }
+    }
+
+    public void refreshTable() {
+        DefaultTableModel model = (DefaultTableModel) characterTable.getModel();
+        updateTable(model);
     }
 }

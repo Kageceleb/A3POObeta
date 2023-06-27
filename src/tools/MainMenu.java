@@ -104,7 +104,7 @@ public class MainMenu {
             System.out.println("---------------------------------------------------");
 
             for (LogicCharacter character : cr.list()) {
-                System.out.println("|[" + character.getId() + "]|  -  | " + character.getName() + " | um " + character.getRace().getRaceName() + " " + character.getClassy().getClassName() + " de nível " + character.getLevel() + " | Jogador: " + character.getPlayer());
+                System.out.println("|[" + character.getId() + "]|  -  | " + character.getName() + " | " + character.getRace().getRaceName() + " " + character.getClassy().getClassName() + " de nível " + character.getLevel() + " | Jogador: " + character.getPlayer());
             }
 
             if (cr.list().isEmpty()) {
