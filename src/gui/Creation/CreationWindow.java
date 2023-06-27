@@ -99,7 +99,7 @@ public class CreationWindow extends JDialog {
                     contentPanel = namesPanel;
                     
                 } else if (contentPanel instanceof NamesPanel) { 
-                    createCharacter();
+                    
                     
                 } 
 
