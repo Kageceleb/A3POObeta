@@ -17,7 +17,7 @@ public class MainMenu {
 
         try {
             System.out.println("---------------------------------------------------");
-            System.out.println("------------- | Novo Personagem | -----------------");
+            System.out.println("------------- |\u001B[43m Novo Personagem \u001B[0m| -----------------");
             System.out.println("---------------------------------------------------");
             System.out.println();
             System.out.println("Vamos começar sua jornada! \n");
@@ -91,8 +91,8 @@ public class MainMenu {
 
 
         } catch (Exception e) {
-            System.out.println("Ocorreu um erro ao criar seu Personagem.");
-            System.out.println("Cuidado com os caracteres que você digita no terminal!");
+            System.out.println("\u001B[31m Ocorreu um erro ao criar seu Personagem. \u001B[0m");
+            System.out.println("\u001B[31m Cuidado com os caracteres que você digita no terminal! \u001B[0m");
             s.nextLine();
         }
     }
@@ -100,7 +100,7 @@ public class MainMenu {
     public void listAllCharacters() {
         try {
             System.out.println("---------------------------------------------------");
-            System.out.println("----------- | Lista de personagens | --------------");
+            System.out.println("----------- |\u001B[43m Lista de personagens \u001B[0m| --------------");
             System.out.println("---------------------------------------------------");
 
             for (LogicCharacter character : cr.list()) {
@@ -128,7 +128,7 @@ public class MainMenu {
                 }
 
                 if (!validId) {
-                    System.out.println("Não há personagens com este Id.");
+                    System.out.println("\u001B[31m Não há personagens com este Id. \u001B[0m");
                 }
                 
                 while (validId) {
@@ -143,7 +143,7 @@ public class MainMenu {
                     int option = s.nextInt();
         
                     if (option < 0 || option > 4) {
-                        System.out.println("Opção inválida! Escolha uma opção do menu.");
+                        System.out.println("\u001B[31m Opção inválida! Escolha uma opção do menu \u001B[0m");
     
                     } else if (option == 0) {
                         validId = false;
@@ -168,8 +168,8 @@ public class MainMenu {
             }
 
         } catch (Exception e) {
-            System.out.println("Ocorreu um erro na alteração do personagem"+e);
-            System.out.println("Cuidado com os caracteres que você digita no terminal!");
+            System.out.println("\u001B[31m Ocorreu um erro na alteração do personagem \u001B[0m"+e);
+            System.out.println("\u001B[31m Cuidado com os caracteres que você digita no terminal! \u001b[0m");
             s.nextLine();
         }         
     }
@@ -246,7 +246,7 @@ public class MainMenu {
 
             while(!validated) {
                 System.out.println("---------------------------------------------------");
-                System.out.println("----------- | Edição de Personagem | --------------");
+                System.out.println("----------- |\u001B[43m Edição de personagens \u001B[0m| --------------");
                 System.out.println("---------------------------------------------------");
                 System.out.println();
                 System.out.println("O que será alterado em " + name + "?");
@@ -310,8 +310,8 @@ public class MainMenu {
             }
 
         } catch (Exception e) {
-            System.out.println("Ocorreu um erro ao editar seu Personagem.");
-            System.out.println("Cuidado com os caracteres que você digita no terminal!");
+            System.out.println("\u001B[31m Ocorreu um erro na alteração do personagem \u001B[0m"+e);
+            System.out.println("\u001B[31m Cuidado com os caracteres que você digita no terminal! \u001b[0m");
             s.nextLine();
         }
     }
@@ -321,7 +321,7 @@ public class MainMenu {
 
         try {
             System.out.println("---------------------------------------------------");
-            System.out.println("---------------- | Level Up! | --------------------");
+            System.out.println("---------------- |\u001B[43m Level Up! \u001B[0m| --------------------");
             System.out.println("---------------------------------------------------");
             System.out.println();
             System.out.println(entity.getName());
@@ -338,7 +338,7 @@ public class MainMenu {
                 int option = s.nextInt();
 
                 if (option != 1 && option != 2) {
-                    System.out.println("Opção inválida! De volta ao menu inicial.");
+                    System.out.println("\u001B[31m Opção inválida! De volta ao menu inicial.\u001B[0m");
 
                 } else if (option == 1) {
                     entity.setLevel(nextLevel);
@@ -352,8 +352,8 @@ public class MainMenu {
 
 
         } catch (Exception e) {
-            System.out.println("Ocorreu um erro no level up do seu Personagem.");
-            System.out.println("Cuidado com os caracteres que você digita no terminal!");
+            System.out.println("\u001b[31m Ocorreu um erro no level up do seu Personagem.\u001B[0m");
+            System.out.println("\u001b[31m Cuidado com os caracteres que você digita no terminal! \u001B[0m");
             s.nextLine();
         }
     }
@@ -364,7 +364,7 @@ public class MainMenu {
         do {          
             try {    
                 System.out.println("---------------------------------------------------");
-                System.out.println("------------ | Debugs & Databases | ---------------");
+                System.out.println("------------ |\u001B[43m Debugs & Databases \u001B[0m | ---------------");
                 System.out.println("---------------------------------------------------");
                 System.out.println();
                 System.out.println("  Bem-vindo ao gerenciador de personagens de D&D!");
@@ -385,7 +385,7 @@ public class MainMenu {
                     System.out.println("---------------------------------------------------");
                     shutdown = true;
                 } else if (option < 0 || option > 2) {
-                    System.out.println("opção inválida! Escolha uma opção do menu!");
+                    System.out.println("\u001b[31m opção inválida! Escolha uma opção do menu! \u001B[0m");
 
                 } else if (option == 1) {
                     this.crateNewCharacter();
@@ -395,7 +395,7 @@ public class MainMenu {
                 }
     
             } catch (Exception e) {
-                System.out.println("Caractere inválido!"+e);
+                System.out.println("\u001b[31m Caractere inválido! \u001B[0m"+e);
                 s.nextLine();
             }
         } while (!shutdown);       

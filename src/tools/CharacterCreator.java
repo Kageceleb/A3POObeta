@@ -54,7 +54,7 @@ public class CharacterCreator{
             
             try {
                 System.out.println("---------------------------------------------------");
-                System.out.println("---------------- | Antecedentes | -----------------");
+                System.out.println("---------------- |\u001B[43m Antecedentes \u001B[0m| -----------------");
                 System.out.println("---------------------------------------------------");
         
                 for (Background bg : bgs) {
@@ -116,7 +116,7 @@ public class CharacterCreator{
             try {
                 
                 System.out.println("---------------------------------------------------");
-                System.out.println("---------------- | Alinhamento | ------------------");
+                System.out.println("---------------- |\u001B[43m Alinhamento \u001B[0m | ------------------");
                 System.out.println("---------------------------------------------------");
                 
                 while (true) {
@@ -229,7 +229,7 @@ public class CharacterCreator{
         do {
             try {
                 System.out.println("---------------------------------------------------");
-                System.out.println("-------------- | As Raças do Jogo | ---------------");
+                System.out.println("-------------- |\u001B[43m As Raças do Jogo \u001B[0m As Raças do Jogo | ---------------");
                 System.out.println("---------------------------------------------------");              
                 System.out.println("Neste jogo seu personagem pode ser:");
                 System.out.println("[1] Humano");
@@ -311,7 +311,7 @@ public class CharacterCreator{
         do {
             try {
                 System.out.println("---------------------------------------------------");
-                System.out.println("---------------- | As Classes | -------------------");
+                System.out.println("---------------- |\u001B[43m As Classes \u001B[0m | -------------------");
                 System.out.println("---------------------------------------------------");
                 System.out.println("Escolha uma Classe para o seu personagem:");
                 System.out.println("[1] Guerreiro");

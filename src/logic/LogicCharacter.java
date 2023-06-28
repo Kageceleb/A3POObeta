@@ -435,11 +435,12 @@ public class LogicCharacter extends Entity {
         }
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("---------------------------------------------------").append("\n");
-        sb.append("------- |       Ficha de Personagem       | -------").append("\n");
+        sb.append("------- |\u001B[43m       Ficha de Personagem       \u001B[0m| -------").append("\n");
         sb.append("---------------------------------------------------").append("\n");
         sb.append("Nome do personagem: ").append(name).append("   |   ").append("Jogador: ").append(player).append("\n");
         sb.append("Raça: ").append(race.getRaceName()).append("   |   ").append("Classe: ").append(classy.getClassName()).append("\n");
@@ -447,7 +448,7 @@ public class LogicCharacter extends Entity {
         sb.append("Antecedente: ").append(background.getBGName()).append("\n");
         sb.append("\n");
         sb.append("---------------------------------------------------").append("\n");
-        sb.append("------- |            Atributos            | -------").append("\n");
+        sb.append("------- |\u001B[43m            Atributos            \u001B[0m| -------").append("\n");
         sb.append("---------------------------------------------------").append("\n");
         sb.append("FOR ").append(this.getStrMain()).append("  ( ").append(this.getStrMod()).append(" )").append("\n");
         sb.append("DES ").append(this.getDexMain()).append("  ( ").append(this.getDexMod()).append(" )").append("\n");
@@ -456,14 +457,14 @@ public class LogicCharacter extends Entity {
         sb.append("SAB ").append(this.getWisMain()).append("  ( ").append(this.getWisMod()).append(" )").append("\n");
         sb.append("CAR ").append(this.getChaMain()).append("  ( ").append(this.getChaMod()).append(" )").append("\n");
         sb.append("---------------------------------------------------").append("\n");
-        sb.append("------- |             Combate             | -------").append("\n");
+        sb.append("------- |\u001B[43m             Combate             \u001B[0m| -------").append("\n");
         sb.append("---------------------------------------------------").append("\n");
         sb.append("Pontos de Vida Totais: ").append(this.getMaxHP()).append("\n");
         sb.append("Iniciativa: ").append(this.getDexMod()).append("\n");
         sb.append("Velocidade: ").append(race.getRaceSpeed()).append("m").append("\n");
         sb.append("Classe de Armadura: ").append(classy.getClassAC()).append("\n");
         sb.append("---------------------------------------------------").append("\n");
-        sb.append("------- |           Habilidades           | -------").append("\n");
+        sb.append("------- |\u001B[43m           Habilidades           \u001B[0m| -------").append("\n");
         sb.append("---------------------------------------------------").append("\n");
         sb.append("Acrobacia ").append(this.getAcrobatics()).append(" (Des)").append("\n");
         sb.append("Arcanismo ").append(this.getArcana()).append(" (Int)").append("\n");
@@ -484,7 +485,7 @@ public class LogicCharacter extends Entity {
         sb.append("Religião ").append(this.getReligion()).append(" (Sab)").append("\n");
         sb.append("Sobrevivência ").append(this.getSurvival()).append(" (Sab)").append("\n");
         sb.append("---------------------------------------------------").append("\n");
-        sb.append("------- |           Inventário            | -------").append("\n");
+        sb.append("------- |\u001B[43m           Inventário            \u001B[0m| -------").append("\n");
         sb.append("---------------------------------------------------").append("\n");
 
         for (String item : equipment) {
@@ -492,7 +493,7 @@ public class LogicCharacter extends Entity {
         }
         
         sb.append("---------------------------------------------------").append("\n");
-        sb.append("------- |             Magias              | -------").append("\n");
+        sb.append("------- |\u001B[43m             Magias              \u001B[0m| -------").append("\n");
         sb.append("---------------------------------------------------").append("\n");
 
         for (String magic : magics) {
