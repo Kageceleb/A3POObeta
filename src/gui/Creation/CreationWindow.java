@@ -119,6 +119,7 @@ public class CreationWindow extends JDialog {
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
         contentBoxPanel.add(contentPanel);
+        // contentBoxPanel.setBackground(Color.BLUE); //Cor teste para verificar preenchimento
 
         setPreferredSize(new Dimension(700, 500));
         setResizable(false);
