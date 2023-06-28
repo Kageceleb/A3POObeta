@@ -364,7 +364,7 @@ public class MainMenu {
         do {          
             try {    
                 System.out.println("---------------------------------------------------");
-                System.out.println("------------ |\u001B[43m Debugs & Databases \u001B[0m | ---------------");
+                System.out.println("------------ |\u001B[43m Debugs & Databases \u001B[0m| ---------------");
                 System.out.println("---------------------------------------------------");
                 System.out.println();
                 System.out.println("  Bem-vindo ao gerenciador de personagens de D&D!");
