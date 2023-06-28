@@ -167,6 +167,8 @@ public class CreationWindow extends JDialog {
         contentBoxPanel.repaint();
     }
 
+
+    // Apenas utilizar após validação completa
     private void createCharacter() {
         CharacterRepository cr = new CharacterRepository();
 

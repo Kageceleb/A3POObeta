@@ -45,7 +45,6 @@ public class RacePanel extends JPanel {
         buttonPanel.add(btHuman);
         buttonPanel.add(btDwarf);
         buttonPanel.add(btElf);
-
         
         JPanel infoPanel = new JPanel(new BorderLayout());
         JPanel fieldsPanel = new JPanel(new GridLayout(2, 1));
@@ -88,7 +87,6 @@ public class RacePanel extends JPanel {
         return 1;
     }
 
-    // Method to set the text fields and image based on the selected race
     public void setRaceInfo(String text1, String text2, String imagePath) {
         txtDescription.setText(text1);
         txtBonuses.setText(text2);

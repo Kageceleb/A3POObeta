@@ -21,14 +21,14 @@ public class MedievalToggleButton extends JToggleButton {
     public MedievalToggleButton(String text) {
         super(text);
         initializeButton();
-        setColors(new Color(153, 102, 0), Color.WHITE); // Color
+        setColors(new Color(153, 102, 0), Color.WHITE);
     }
 
     private void initializeButton() {
-        setFont(new Font("Serif", Font.BOLD, 16)); // Font and Size
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 2)); // Border
+        setFont(new Font("Serif", Font.BOLD, 16));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
-        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); // Cursor
+        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         addActionListener(new ActionListener() {
             @Override

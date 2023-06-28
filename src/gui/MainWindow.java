@@ -41,7 +41,7 @@ public class MainWindow extends JFrame {
                 layeredPane.setBackground(new Color(204, 204, 204));
             }
         } catch (Exception e) {
-            System.err.println("Error loading image: " + e.getMessage());
+            System.err.println("Erro carregando imagem: " + e.getMessage());
             layeredPane.setBackground(new Color(204, 204, 204));
         }
     }

@@ -55,10 +55,6 @@ public class AttributesPanel extends JPanel {
             remainingPoints -= difference;
             previousValue = newValue;
 
-            // Update the remaining points display
-            // (e.g., update a label or display in a dialog)
-            // TODO: Update the remaining points display
-
             spinner.setEnabled(remainingPoints > 0);
         }
     }
