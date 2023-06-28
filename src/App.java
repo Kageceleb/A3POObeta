@@ -6,11 +6,11 @@ public class App {
     public static void main(String[] args) throws Exception {
       
         
-        // App no console
+        // App no console | completo
         new MainMenu();
 
 
-        // App no Swing
+        // App no Swing | parcial
         // MainWindow mainWindow = new MainWindow();
         // mainWindow.setVisible(true);
 
