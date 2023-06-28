@@ -17,10 +17,10 @@ public class ClassyPanel extends JPanel {
         setPreferredSize(new Dimension(680, 420));
 
         JPanel buttonPanel = new JPanel(new GridLayout(1, 4));
-        btWarrior = new MedievalToggleButton("Warrior");
-        btRogue = new MedievalToggleButton("Rogue");
-        btMage = new MedievalToggleButton("Mage");
-        btPriest = new MedievalToggleButton("Priest");
+        btWarrior = new MedievalToggleButton("Guerreiro");
+        btRogue = new MedievalToggleButton("Ladino");
+        btMage = new MedievalToggleButton("Mago");
+        btPriest = new MedievalToggleButton("Sacerdote");
 
         btWarrior.addActionListener(e -> setClassNumber(1));
         btRogue.addActionListener(e -> setClassNumber(2));
