@@ -15,7 +15,7 @@ public class AttributesPanel extends JPanel {
         attributeSpinners = new JSpinner[6];
 
         for (int i = 0; i < 6; i++) {
-            JLabel label = new JLabel("Attribute " + (i + 1) + ":");
+            JLabel label = new JLabel("Atributo " + (i + 1) + ":");
             JSpinner spinner = new JSpinner(new SpinnerNumberModel(8, 8, 15, 1));
             attributeSpinners[i] = spinner;
 
@@ -44,8 +44,8 @@ public class AttributesPanel extends JPanel {
             if (difference > 0 && remainingPoints < difference) {
                 JOptionPane.showMessageDialog(
                         AttributesPanel.this,
-                        "Not enough points remaining.",
-                        "Point Allocation",
+                        "Pontos insuficientes!.",
+                        "Pontos",
                         JOptionPane.ERROR_MESSAGE
                 );
                 spinner.setValue(previousValue);
