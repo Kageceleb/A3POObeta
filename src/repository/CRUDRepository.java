@@ -10,8 +10,8 @@ abstract class CRUDRepository<E extends Entity> {
     return this.tableName;
   }
   /**
-   * Given an entity saves to the DB.
-   * Return the id of the created entity or 0 if fails
+   * Uma dada entidade que é salva no BD.
+   * Retorna o id da entidade criada ou 0 se falhar.
    */
   abstract public int create(E entity);
   abstract public ArrayList<E> list();
