@@ -73,7 +73,20 @@ public class ListWindow extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int selectedRow = characterTable.getSelectedRow();
+
                 if (selectedRow != -1) {
+                    Object selectedValue = characterTable.getValueAt(selectedRow, 0);
+
+                    if (selectedValue instanceof Number) {
+                        int characterId = ((Number) selectedValue).intValue();
+
+                        for (LogicCharacter character : cr.list()) {
+                            if (character.getId() == characterId) {
+                                
+                                break;
+                            }
+                        }
+                    }
 
                     refreshTable();
                 }
@@ -85,8 +98,43 @@ public class ListWindow extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int selectedRow = characterTable.getSelectedRow();
-                if (selectedRow != -1) {
+                boolean validated = false;
+                LogicCharacter lvlupChar = new LogicCharacter(0, null, null, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1);
 
+                if (selectedRow != -1) {
+                    Object selectedValue = characterTable.getValueAt(selectedRow, 0);
+
+                    if (selectedValue instanceof Number) {
+                        int characterId = ((Number) selectedValue).intValue();
+
+                        for (LogicCharacter character : cr.list()) {
+                            if (character.getId() == characterId) {
+                                lvlupChar = character;
+                                validated = true;
+                                break;
+                            }
+                        }
+
+                        if (validated) {
+                            int nextLevel = lvlupChar.getLevel()+1;
+
+                            if (nextLevel > 20) {
+                                JOptionPane.showMessageDialog(null, lvlupChar.getName() + " chegou ao limite da sua jornada. Já é um lenda!", "Atenção aventureiro!", JOptionPane.INFORMATION_MESSAGE);
+                            } else {
+                                int choice = JOptionPane.showOptionDialog(null,lvlupChar.getName() + " será promovido ao nível " + nextLevel,"Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,new String[]{"Sim", "Não"},"Sim");
+                                
+                                if (choice == JOptionPane.YES_OPTION) {
+                                    lvlupChar.setLevel(nextLevel);
+                                    cr.update(lvlupChar.getId(), lvlupChar);                                   
+                                   
+                                } else if (choice == JOptionPane.NO_OPTION) {
+                                    
+                                }
+
+                            }
+                        }
+                    }
+                                       
                     refreshTable();
                 }
             }
@@ -98,7 +146,7 @@ public class ListWindow extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 int selectedRow = characterTable.getSelectedRow();
                 if (selectedRow != -1) {
-
+                    
                     refreshTable();
                 }
             }
